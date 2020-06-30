@@ -1,0 +1,14 @@
+.Paintings {
+    display: flex;
+    margin-top: 20vh;
+}
+
+.PaintingBox {
+    width: 80%;
+    height: 80%;
+}
+
+.PaintingBox img {
+    width: inherit;
+    height: inherit;
+}

@@ -1,0 +1,71 @@
+.AboutMe {
+    margin: auto;
+    margin-top: 20vh;
+    font-family: sans-serif;
+    animation: fadeInAbout 0.5s ease-in both;
+}
+
+.Curriculum {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25em;
+}
+
+.CurriculumSection {
+    margin: auto;
+}
+
+.Curriculum h4 {
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+.Curriculum h2 {
+    margin: auto;
+    margin-bottom: 40px;
+    padding: 10px;
+}
+
+.CurriculumRow {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.Year {
+    
+}
+
+.Desc {
+    margin-left: 10px;
+    color: #242424;
+}
+
+.Statement {
+    text-align: center;
+    font-size: 1.25em;
+    margin-top: 40px;
+    width: 60%;
+    margin: auto;
+}
+
+.Statement p {
+    text-align: left;
+    color: #242424;
+}
+
+hr {
+    margin: 80px;
+}
+
+@keyframes fadeInAbout {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -0.2%, 0);
+    }
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}

@@ -1,0 +1,12 @@
+.Form {
+    background-color: rgb(244, 244, 244);
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+form textarea {
+    padding: 1em;
+    font-size: 1.25em;
+    resize: none;
+}
