@@ -1,7 +1,8 @@
 import React from 'react'
 import './AboutMe.css'
+import statementTranslation from '../translations/statement'
 
-const AboutMe = () => {
+const AboutMe = ({ lang }) => {
   return (
     <div className="AboutMe">
       <div className='Curriculum'>
@@ -52,37 +53,7 @@ const AboutMe = () => {
       </div>
       <hr></hr>
       <div className='Statement'>
-          <h2>Statement</h2>
-          <p>
-            Usein käsittelen teoksissani nykyaikaa etäännytetysti menneisyyden kautta. 
-            Lähtökohtana saatan käyttää vanhoja valokuvia tai historiallista tutkimusta. 
-            Muotokuvasarjassa sata vuotta sitten eläneistä suomalaisista mestaripainijoista 
-            olen muuttanut urheilusankarit seitsemän kääpiön isoiksi vastineiksi. 
-            Samalla olen tarkastellut paitsi sankaruuden myyttiä myös sitä mitä ulkoinen olemus, 
-            ryhti ja ilmeet ihmisestä paljastavat.
-          </p>
-          <p>
-            Viime aikoina olen tehnyt maalauksia ja installaatioita Ranskan suuresta vallankumouksesta 
-            ja siihen johtaneista syistä. Olen käsitellyt aihetta kahden, vallankumouksen vastakkaisilla 
-            puolilla olleen henkilön, Marie Antoinetten ja Maximilien Robespierren kautta. 
-            Näissäkin teoksissa olen pohtinut etäännytetysti menneisyyden avulla yhteiskunnallista 
-            oikeudenmukaisuutta, joka on meidän aikamme Euroopassa haasteiden edessä. 
-            Lähtökohtana teoksille ovat olleet mm. autenttiset vahanuket Lontoon Madame Tussaudin 
-            vahakabinetissa sekä Ranskan suuresta vallankumouksesta kertova kirjallisuus.
-          </p>
-          <p>
-              Minua kiinnostaa myös arkisten esineiden käyttäminen maalausten lähtökohtana. 
-              Lelut tai muut pienet koriste-esineet saattavat joissakin teoksissani toimia 
-              näyttelijöinä kuvitteellisissa tapahtumissa. Tästä esimerkkinä on maalaus, 
-              joka esittää pohjoisnavalle eksynyttä kumiankkaa. 
-              Kuvalla on vastineensa todellisuudessa. 
-              Vuonna 1992 kiinalaisesta konttilaivasta purkautui vahingossa valtava määrä erilaisia kumileluja: 
-              ankkoja, kilpikonnia ja sammakoita. Nämä lelut ovat myöhemmin ajautuneet pitkin maailman meriä 
-              muun muassa Britannian rannikolle ja Havaijille asti. Vaikka kumikrääsän päätyminen mereen on 
-              ympäristökatastrofi, ovat lelujen kulkureitit samalla antaneet tutkijoille arvokasta tietoa 
-              merivirtojen liikkeestä. On erikoista, että en maalatessani arktista kumiankkaa kuitenkaan 
-              tiennyt tästä onnettomuudesta mitään. Luin siitä vasta paljon myöhemmin.
-            </p>
+          {lang === 'fi' ? statementTranslation.statementFi() : statementTranslation.statementEn()}
       </div>
       <hr></hr>
     </div>

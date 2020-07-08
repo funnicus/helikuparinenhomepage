@@ -1,3 +1,21 @@
+@media only screen and (max-width: 900px) {
+    .AboutMe {
+        margin: 0;
+    }
+    .Statement {
+        width: 90%;
+    }
+}
+@media only screen and (min-width: 900px) {
+    .AboutMe {
+        margin: auto;
+        width: 900px;
+    }
+    .Statement {
+        width: 60%;
+    }
+}
+
 .AboutMe {
     margin: auto;
     margin-top: 20vh;
@@ -33,10 +51,6 @@
     margin-top: 10px;
 }
 
-.Year {
-    
-}
-
 .Desc {
     margin-left: 10px;
     color: #242424;
@@ -46,7 +60,6 @@
     text-align: center;
     font-size: 1.25em;
     margin-top: 40px;
-    width: 60%;
     margin: auto;
 }
 

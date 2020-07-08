@@ -1,0 +1,7 @@
+POST http://localhost:3001/api/email/
+Content-Type: application/json
+
+{
+    "email": "jmkupa@utu.fi",
+    "message": "Testi, hei siellä :)"
+}

@@ -1,38 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   BrowserRouter as Router,
-  Switch, Route, Link
+  Switch, Route
 } from "react-router-dom"
 import AboutMe from './components/AboutMe'
 import HeliKuparinen from './components/HeliKuparinen'
 import Contact from './components/Contact'
-import Navbar from './components/Navbar'
 import Paintings from './components/Paintings'
+import Navbar from './components/Navbar'
 import './App.css'
 
 const App = () => {
+  const [lang, setLang] = useState('fi')
+  const [fadein, setFadein] = useState('Navbar-fadein')
   return (
     <Router>
-      <div className="Navbar">
-        <ul>
-            <li><Link to="/">Heli Kuparinen</Link></li>
-            <li><Link to="/about">Tietoa minusta</Link></li>
-            <li><Link to="/paintings">Teokset</Link></li>
-            <li><Link to="/contact">Ota yhteyttä</Link></li>
-        </ul> 
-      </div>
       <Switch>
         <Route path='/about'>
-          <AboutMe />
+          <Navbar id='none' lang={lang} setLang={setLang} setFadein={setFadein}/>
+          <AboutMe lang={lang} />
         </Route>
         <Route path='/paintings'>
-          <Paintings />
+          <Navbar id='none' lang={lang} setLang={setLang} setFadein={setFadein}/>
+          <Paintings lang={lang} />
         </Route>
         <Route path='/contact'>
-          <Contact />
+          <Navbar id='none' lang={lang} setLang={setLang} setFadein={setFadein}/>
+          <Contact lang={lang} />
         </Route>
         <Route path='/'>
-          <HeliKuparinen />
+          <Navbar id={fadein} lang={lang} setLang={setLang} setFadein={setFadein}/>
+          <HeliKuparinen lang={lang} />
         </Route>
       </Switch>
       <div className='Footer'>
