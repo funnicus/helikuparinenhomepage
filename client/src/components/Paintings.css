@@ -1,27 +1,30 @@
-.Paintings {
+.Paintingsgrid {
     display: flex;
     margin-top: 10vh;
     flex-wrap: wrap;
     align-content: space-between;
-    animation: fadeInPaintings 0.5s ease-in both;
+    animation: fadeInPaintings 0.3s ease-in both;
 }
 
-img {
+.Paintingsgrid img {
     max-width: 30%;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 20px;
     height: auto;
+    transition: 0.5s ease-in-out;
 }
 
-img:hover {
+.Paintingsgrid img:hover {
     transform: scale(1.05);
     cursor: pointer;
     opacity: 0.9;
+    transition: 0.5s ease-in-out;
 }
 
 @media only screen and (max-width: 600px) {
-    img {
+    .Paintingsgrid img {
         max-width: 80%;
+        margin-top: 10px;
     }
 }
 

@@ -1,90 +1,114 @@
-import React from 'react'
+import React, { useState } from 'react'
 import paintingService from '../services/email'
+import Painting from './Painting'
 import './Paintings.css'
+import {
+    aamu,
+    arktinenAnkka,
+    iloisestiSekaisin,
+    laivue,
+    leivoksetLeipa,
+    marieAntoinette,
+    melankolia,
+    robespierre,
+    suomenSuvi
+} from '../images/index'
 
 const Paintings = () => {
+    const [imgToShow, setToShow] = useState(aamu)
+    const [txtToShow, setTxtToShow] = useState('...')
+    const [style, setStyle] = useState('notVisible')
+    const showImage = (image, txt) => {
+        setStyle('visible')
+        setTxtToShow(txt)
+        setToShow(image)
+    }
+    const closeImage = () => {
+        setStyle('notVisible')
+        setTxtToShow('...')
+    }
     const test = async () => {
         const pp = await paintingService.getAll()
         console.log(pp)
     }
     const paintigsPlaceholderJSON = [
         {
-            name: 'Paintign 1',
+            name: 'aamu',
             year: '2000',
             dimensions: '100x30cm',
             technique: 'Oil on canvas',
-            img: 'http://www.elisanet.fi/kupariset/heli/img/portfolio/lajinsa-viimeinen.jpg',
+            img: aamu,
             showOrder: 0
         },
         {
-            name: 'Paintign 2',
+            name: 'arktinen-ankka',
             year: '2000',
             dimensions: '100x30cm',
             technique: 'Oil on canvas',
-            img: 'http://www.elisanet.fi/kupariset/heli/img/portfolio/tunto.jpg',
+            img: arktinenAnkka,
             showOrder: 1
         },
         {
-            name: 'Paintign 3',
+            name: 'iloisesti-sekaisin',
             year: '2000',
             dimensions: '100x30cm',
             technique: 'Oil on canvas',
-            img: 'http://www.elisanet.fi/kupariset/heli/img/portfolio/lajinsa-viimeinen.jpg',
+            img: iloisestiSekaisin,
             showOrder: 2
         },
         {
-            name: 'Paintign 1',
+            name: 'laivue',
             year: '2000',
             dimensions: '100x30cm',
             technique: 'Oil on canvas',
-            img: 'http://www.elisanet.fi/kupariset/heli/img/portfolio/lajinsa-viimeinen.jpg',
+            img: laivue,
             showOrder: 0
         },
         {
-            name: 'Paintign 2',
+            name: 'leivokset-leipa',
             year: '2000',
             dimensions: '100x30cm',
             technique: 'Oil on canvas',
-            img: 'http://www.elisanet.fi/kupariset/heli/img/portfolio/joro.jpg',
+            img: leivoksetLeipa,
             showOrder: 1
         },
         {
-            name: 'Paintign 3',
+            name: 'marie-antoinette',
             year: '2000',
             dimensions: '100x30cm',
             technique: 'Oil on canvas',
-            img: 'http://www.elisanet.fi/kupariset/heli/img/portfolio/lajinsa-viimeinen.jpg',
+            img: marieAntoinette,
             showOrder: 2
         },
         {
-            name: 'Paintign 1',
+            name: 'melankolia',
             year: '2000',
             dimensions: '100x30cm',
             technique: 'Oil on canvas',
-            img: 'http://www.elisanet.fi/kupariset/heli/img/portfolio/lajinsa-viimeinen.jpg',
+            img: melankolia,
             showOrder: 0
         },
         {
-            name: 'Paintign 2',
+            name: 'robespierre',
             year: '2000',
             dimensions: '100x30cm',
             technique: 'Oil on canvas',
-            img: 'http://www.elisanet.fi/kupariset/heli/img/portfolio/tunto.jpg',
+            img: robespierre,
             showOrder: 1
         },
         {
-            name: 'Paintign 3',
+            name: 'suomen-suvi-big',
             year: '2000',
             dimensions: '100x30cm',
             technique: 'Oil on canvas',
-            img: 'http://www.elisanet.fi/kupariset/heli/img/portfolio/lajinsa-viimeinen.jpg',
+            img: suomenSuvi,
             showOrder: 2
         },
     ]
 
     const paintings = paintigsPlaceholderJSON.map(p => {
         return(
-            <img src={p.img} alt={p.name}></img>
+            <img className='gridPainting' src={p.img} alt={p.name} onClick={() => showImage(p.img, `${p.name}, ${p.dimensions}, ${p.technique}`)}></img>
         )
     })
 
@@ -92,7 +116,10 @@ const Paintings = () => {
 
     return (
         <div className='Paintings'>
-            {paintings}
+            <Painting style={style} painting={imgToShow} closeImage={closeImage} txt={txtToShow}/>
+            <div className='Paintingsgrid'>
+                {paintings}
+            </div>
         </div>
     )
 }
