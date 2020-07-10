@@ -1,0 +1,19 @@
+{
+  "name": "helikuparinenhomepage",
+  "version": "1.0.0",
+  "description": "Homepage root package.json for heroku",
+  "main": "./server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/funnicus/helikuparinenhomepage.git"
+  },
+  "author": "Juhana Kuparinen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/funnicus/helikuparinenhomepage/issues"
+  },
+  "homepage": "https://github.com/funnicus/helikuparinenhomepage#readme"
+}
