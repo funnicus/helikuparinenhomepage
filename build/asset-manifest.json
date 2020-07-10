@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.28846f49.chunk.css",
+    "main.js": "/static/js/main.4ba34d9d.chunk.js",
+    "main.js.map": "/static/js/main.4ba34d9d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.09b85ec0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.09b85ec0.js.map",
+    "static/js/2.d7976eff.chunk.js": "/static/js/2.d7976eff.chunk.js",
+    "static/js/2.d7976eff.chunk.js.map": "/static/js/2.d7976eff.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.01a6b2e66dfbc1c0fdc3403d1d29b586.js": "/precache-manifest.01a6b2e66dfbc1c0fdc3403d1d29b586.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.28846f49.chunk.css.map": "/static/css/main.28846f49.chunk.css.map",
+    "static/js/2.d7976eff.chunk.js.LICENSE.txt": "/static/js/2.d7976eff.chunk.js.LICENSE.txt",
+    "static/media/aamu.jpg": "/static/media/aamu.f1c729c8.jpg",
+    "static/media/arktinen-ankka.jpg": "/static/media/arktinen-ankka.db8d0695.jpg",
+    "static/media/iloisesti-sekaisin.jpg": "/static/media/iloisesti-sekaisin.b4495094.jpg",
+    "static/media/laivue.jpg": "/static/media/laivue.a4e9b32e.jpg",
+    "static/media/leivokset-leipa.jpg": "/static/media/leivokset-leipa.862d7506.jpg",
+    "static/media/marie-antoinette.jpg": "/static/media/marie-antoinette.70526684.jpg",
+    "static/media/melankolia.jpg": "/static/media/melankolia.b542fb2f.jpg",
+    "static/media/robespierre.jpg": "/static/media/robespierre.df757ce0.jpg",
+    "static/media/suomen-suvi-big.jpg": "/static/media/suomen-suvi-big.d1213ddd.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.09b85ec0.js",
+    "static/js/2.d7976eff.chunk.js",
+    "static/css/main.28846f49.chunk.css",
+    "static/js/main.4ba34d9d.chunk.js"
+  ]
+}

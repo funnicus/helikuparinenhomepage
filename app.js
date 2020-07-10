@@ -15,7 +15,7 @@ const mongoose = require('mongoose')
 app.use(cors())
 app.use(express.json())
 
-app.use(express.static('./client/build'))
+app.use(express.static('./build'))
 
 app.use('/api/paintings', paintingsRouter)
 app.use('/api/email', emailRouter)
