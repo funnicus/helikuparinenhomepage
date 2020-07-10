@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Navbar.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 import {
   Link
 } from "react-router-dom"
+import useWindowDimensions from '../hooks/useWindowDimensions'
 
 const Navbar = ({ id, lang, setLang, setFadein }) => {
+  const [style, setStyle] = useState(false)
+  const { height, width } = useWindowDimensions();
+
+  const toggleMenu = () => setStyle(!style)
+
   return (
-          <div id={id} className="Navbar">
+        <div>
+          <button id='dropdown-btn' onClick={toggleMenu}><FontAwesomeIcon icon={faBars} /></button>
+          <div id={id} className="Navbar" style={style && width < 770 ? { display: 'none' } : { display: 'flex' }}>
             <ul id='Left'>
                 <li><Link to="/" onClick={() => setFadein('none')}>Heli Kuparinen</Link></li>
                 <li><Link to="/about" onClick={() => setFadein('none')}>{lang === 'fi' ? 'Tietoa minusta' : 'About me' }</Link></li>
@@ -18,6 +28,7 @@ const Navbar = ({ id, lang, setLang, setFadein }) => {
               <li><button onClick={() => setLang('en')}>EN</button></li>
             </ul>
           </div>
+        </div>
   )
 }
 

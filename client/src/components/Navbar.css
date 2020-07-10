@@ -32,8 +32,21 @@
 }
 
 #Right button:hover {
-  background-color: black;
-  color: white;
+  background-color: rgb(244, 244, 244);
+  cursor: pointer;
+}
+
+#dropdown-btn {
+  display: none;
+  margin-left: auto;
+  border-radius: 5px;
+  background-color: white;
+  border: none;
+  font-size: 2em;
+}
+
+#dropdown-btn:hover {
+  background-color: rgb(244, 244, 244);
   cursor: pointer;
 }
 
@@ -82,4 +95,30 @@ animation-delay: 3s;
 		opacity: 1;
 		transform: translate3d(0, 0, 0);
 	}
+}
+
+@media only screen and (max-width: 770px) {
+  .Navbar {
+    flex-direction: column;
+  }
+
+  #Left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #Right {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+  }
+
+  #dropdown-btn {
+    display: block;
+  }
+}
+@media only screen and (min-width: 770px) {
+  .Navbar {
+    display: flex;
+  }
 }

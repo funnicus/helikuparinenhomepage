@@ -12,14 +12,11 @@
 }
 
 .Form {
-    background-color: rgb(244, 244, 244);
     margin: auto;
     margin-top: 10vh;
+    margin-bottom: 10vh;
     text-align: center;
     padding: 20px;
-    -webkit-box-shadow: 6px 6px 17px 0px rgba(28,28,28,0.66);
-    -moz-box-shadow: 6px 6px 17px 0px rgba(28,28,28,0.66);
-    box-shadow: 6px 6px 17px 0px rgba(28,28,28,0.66);
 }
 
 form input {
@@ -34,4 +31,19 @@ form textarea {
     padding: 1em;
     font-size: 1.25em;
     resize: none;
+}
+
+form button {
+    margin: 10px;
+    height: 40px;
+    width: 80px;
+    float: right;
+    border-radius: 5px;
+    background-color: white;
+    border: none;
+}
+
+form button:hover {
+    background-color: rgb(244, 244, 244);
+    cursor: pointer;
 }

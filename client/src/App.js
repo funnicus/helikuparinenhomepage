@@ -9,10 +9,12 @@ import Contact from './components/Contact'
 import Paintings from './components/Paintings'
 import Navbar from './components/Navbar'
 import './App.css'
+import useWindowDimensions from './hooks/useWindowDimensions'
 
 const App = () => {
   const [lang, setLang] = useState('fi')
   const [fadein, setFadein] = useState('Navbar-fadein')
+  const { height, width } = useWindowDimensions()
   return (
     <Router>
       <Switch>
@@ -29,7 +31,7 @@ const App = () => {
           <Contact lang={lang} />
         </Route>
         <Route path='/'>
-          <Navbar id={fadein} lang={lang} setLang={setLang} setFadein={setFadein}/>
+          <Navbar id={width > 770 ? fadein : 'none'} lang={lang} setLang={setLang} setFadein={setFadein}/>
           <HeliKuparinen lang={lang} />
         </Route>
       </Switch>

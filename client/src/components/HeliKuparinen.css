@@ -15,6 +15,12 @@
     animation: fadeInHeader 3s ease-in both;
 }
 
+@media only screen and (max-width: 770px) {
+	.Header {
+		margin-top: 40%;
+	}
+}
+
 @keyframes fadeInHeader {
 	0% {
 		opacity: 0;
