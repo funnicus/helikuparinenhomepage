@@ -1,6 +1,9 @@
 {
   "name": "helikuparinenhomepage",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.3.0"
+  },
   "description": "Serveripuolen koodi äidin kotisivuille :)",
   "main": "index.js",
   "scripts": {
