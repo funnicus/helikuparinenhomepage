@@ -5,6 +5,7 @@ const Form = ({ handleSubmit, content, handleContentChange, email, handleEmailCh
   return (
     <div className="Form">
         <form onSubmit={handleSubmit}>
+          <div id='input-field'>
             <input 
             type='text'
             id='email'
@@ -13,6 +14,8 @@ const Form = ({ handleSubmit, content, handleContentChange, email, handleEmailCh
             placeholder='your@email.com'
             onChange={e => handleEmailChange(e)}
             />
+            <button id='submit-button' type="submit">send!</button>
+          </div>
             <textarea
             type="text"
             id='content'
@@ -21,7 +24,6 @@ const Form = ({ handleSubmit, content, handleContentChange, email, handleEmailCh
             placeholder={lang === 'fi' ? 'mitä kuuluu?' : 'what\'s on your mind?'}
             onChange={e => handleContentChange(e)}
             />
-            <button id='submit-button' type="submit">send!</button>
         </form>
     </div>
   )

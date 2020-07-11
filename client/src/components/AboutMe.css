@@ -12,6 +12,9 @@
     .Curriculum {
         width: 90%;
     }
+    .Bio #portrait {
+        align-self: flex-start;
+    }
 }
 @media only screen and (min-width: 900px) {
     .AboutMe {
@@ -27,11 +30,14 @@
     .Curriculum {
         width: 60%;
     }
+    .Bio #portrait {
+        align-self: center;
+    }
 }
 
 .AboutMe {
     margin: auto;
-    margin-top: 15vh;
+    margin-top: 10vh;
     font-family: sans-serif;
     animation: fadeInAbout 0.5s ease-in both;
 }
@@ -46,7 +52,6 @@
     width: 50%;
     height: auto;
     flex-basis: 600px;
-    align-self: center;
 }
 .Bio p {
     color: #242424;

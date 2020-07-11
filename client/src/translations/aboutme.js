@@ -21,9 +21,10 @@ const aboutmeEn = () => {
             <h2>Hi</h2>
             <p>
                 I am a Helsinki-based artist who mainly works with oilpaints. 
-                Currently, I am particulary intersested in portraying people in
-                my paintings. In the background, I have a thorough study of living model
-                acquired in my youth as well as an academic degree in painting.
+                Currently, I am particulary interested in portraying people in
+                my works. On the background, I have a solid understanding 
+                of the living model, aqcuired from my studies, as well as an academic degree
+                in painting.
             </p>
         </div>
     )

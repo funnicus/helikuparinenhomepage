@@ -12,34 +12,21 @@
 }
 
 #imageOverlay {
-    width: 50%;
-    height: auto;
-    position: relative;
+    position: absolute;
     top: 50%;
-    left: 25%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    text-align: center;
 }
 
 #shownImage {
-    width: 100%;
+    width: 70%;
     height: auto;
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-}
-
-.Painting button {
-    float: right;
-    border: none;
-    background-color: none;
-    margin: 20px;
 }
 
 .Painting p {
-    position: relative;
-    top: -300px;
-    text-align: center;
     color: white;
     font-size: 1.5em;
 }
@@ -50,4 +37,11 @@
 
 #notVisible {
     display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    #shownImage {
+        width: 100%;
+        height: auto;
+    }
 }

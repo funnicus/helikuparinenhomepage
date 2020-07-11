@@ -1,9 +1,9 @@
-const config = require('./utils/config')
+const config = require('./server/utils/config')
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const paintingsRouter = require('./controllers/paintings')
-const emailRouter = require('./controllers/email')
+const paintingsRouter = require('./server/controllers/paintings')
+const emailRouter = require('./server/controllers/email')
 const mongoose = require('mongoose')
 
 //console.log('connecting to', config.MONGODB_URI)
