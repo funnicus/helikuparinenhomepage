@@ -8,7 +8,7 @@
     bottom: 0;
     z-index: 2;
     cursor: pointer;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.904);
 }
 
 #imageOverlay {
@@ -16,16 +16,14 @@
     height: auto;
     position: relative;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
+    left: 25%;
 }
 
 #shownImage {
     width: 100%;
     height: auto;
-    position: relative;
-    top: 50%;
+    position: absolute;
+    top: 80%;
     left: 50%;
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
@@ -39,11 +37,11 @@
 }
 
 .Painting p {
-    position: absolute;
-    top: 50%;
-    width: 100%;
+    position: relative;
+    top: -300px;
     text-align: center;
     color: white;
+    font-size: 1.5em;
 }
 
 #visible {

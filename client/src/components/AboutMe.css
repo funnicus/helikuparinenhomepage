@@ -5,6 +5,13 @@
     .Statement {
         width: 90%;
     }
+    .Bio {
+        width: 90%;
+        flex-direction: column;
+    }
+    .Curriculum {
+        width: 90%;
+    }
 }
 @media only screen and (min-width: 900px) {
     .AboutMe {
@@ -14,19 +21,47 @@
     .Statement {
         width: 60%;
     }
+    .Bio {
+        width: 60%;
+    }
+    .Curriculum {
+        width: 60%;
+    }
 }
 
 .AboutMe {
     margin: auto;
-    margin-top: 20vh;
+    margin-top: 15vh;
     font-family: sans-serif;
     animation: fadeInAbout 0.5s ease-in both;
+}
+
+.Bio {
+    display: flex;
+    margin-top: 40px;
+    font-size: 1.25em;
+    margin: auto;
+}
+.Bio #portrait {
+    width: 50%;
+    height: auto;
+    flex-basis: 600px;
+    align-self: center;
+}
+.Bio p {
+    color: #242424;
 }
 
 .Curriculum {
     display: flex;
     flex-direction: column;
     font-size: 1.25em;
+    list-style: none;
+    margin: auto;
+}
+
+.Curriculum ul {
+    list-style: none;
 }
 
 .CurriculumSection {
