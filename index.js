@@ -4,9 +4,7 @@ const config = require('./server/utils/config')
 
 const server = http.createServer(app)
 
-const hostname = '127.0.0.1';
-
 const PORT = config.PORT || 3001
-server.listen(PORT, hostname, () => {
-  console.log(`Server running at http://${hostname}:${PORT}/`)
+server.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}...`)
 })
