@@ -1,0 +1,12 @@
+.Message {
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    font-family: sans-serif;
+    width: fit-content;
+    padding: 20px;
+    border-radius: 20px;
+    opacity: 0.7;
+    display: none;
+    transition: 1s ease-in;
+}

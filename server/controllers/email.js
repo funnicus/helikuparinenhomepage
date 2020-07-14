@@ -21,16 +21,16 @@ transporter.verify((error, success) => {
   }
 });
 
-emailRouter.post('/', (req, res, next) => {
+emailRouter.post('/', (req, res) => {
   console.log("Hi...")
   console.log(req.body)
   const email = req.body.email
   const message = req.body.message
-  const content = `email: ${email} \n message: ${message} `
+  const content = `${email} \n ${message} `
 
   const mail = {
-    from: 'anonymous',
-    to: 'juhku@elisanet.fi',  // Change to email address that you want to receive messages on
+    from: email,
+    to: 'jmkupa@utu.fi',  // Change to email address that you want to receive messages on
     subject: 'Joku on ottanut sinuun yhteyttä kotisivujesi kautta!',
     text: content
   }

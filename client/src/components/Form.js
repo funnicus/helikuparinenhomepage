@@ -1,7 +1,7 @@
 import React from 'react'
 import './Form.css'
 
-const Form = ({ handleSubmit, content, handleContentChange, email, handleEmailChange, lang }) => {
+const Form = ({ handleSubmit, content, handleContentChange, email, handleEmailChange, lang, style }) => {
   return (
     <div className="Form">
         <form onSubmit={handleSubmit}>
@@ -13,6 +13,7 @@ const Form = ({ handleSubmit, content, handleContentChange, email, handleEmailCh
             name='Email'
             placeholder='your@email.com'
             onChange={e => handleEmailChange(e)}
+            style={style}
             />
             <button id='submit-button' type="submit">send!</button>
           </div>
