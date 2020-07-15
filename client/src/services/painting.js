@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = '/api/paintings/'
+const baseUrl = '/api/painting/'
 
 let token = null
 const setToken = newToken => {

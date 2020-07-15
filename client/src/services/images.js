@@ -1,10 +1,5 @@
 import axios from 'axios'
-const baseUrl = '/api/paintings/'
-
-let token = null
-const setToken = newToken => {
-  token = `bearer ${newToken}`
-}
+const baseUrl = '/api/upload/'
 
 const getAll = async () => {
   const request = axios.get(baseUrl)
@@ -20,7 +15,7 @@ const create = async newObject => {
   const config = {
     headers: { Authorization: token },
   }
-  const response = await axios.post(baseUrl, newObject, config)
+  const response = await axios.post(baseUrl, newObject)
   return response.data
 }
 

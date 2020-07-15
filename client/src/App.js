@@ -6,8 +6,9 @@ import {
 import AboutMe from './components/AboutMe'
 import HeliKuparinen from './components/HeliKuparinen'
 import Contact from './components/Contact'
-import Paintings from './components/Paintings'
+import Gallery from './components/Gallery'
 import Navbar from './components/Navbar'
+import AdminPage from './components/AdminPage'
 import './App.css'
 import useWindowDimensions from './hooks/useWindowDimensions'
 
@@ -24,11 +25,14 @@ const App = () => {
         </Route>
         <Route path='/paintings'>
           <Navbar id='none' lang={lang} setLang={setLang} setFadein={setFadein}/>
-          <Paintings lang={lang} />
+          <Gallery />
         </Route>
         <Route path='/contact'>
           <Navbar id='none' lang={lang} setLang={setLang} setFadein={setFadein}/>
           <Contact lang={lang} />
+        </Route>
+        <Route path='/login'>
+          <AdminPage />
         </Route>
         <Route path='/'>
           <Navbar id={width > 770 ? fadein : 'none'} lang={lang} setLang={setLang} setFadein={setFadein}/>

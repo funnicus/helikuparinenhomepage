@@ -47,6 +47,12 @@ form button {
     border: none;
 }
 
+form select {
+    width: 25%;
+    margin-bottom: 10px;
+    padding: 0.5em;
+}
+
 form button:hover {
     background-color: rgb(244, 244, 244);
     cursor: pointer;

@@ -1,9 +1,17 @@
+.Paintings h2 {
+    margin-top: 10vh;
+}
+
 .Paintingsgrid {
     display: flex;
     margin-top: 10vh;
     flex-wrap: wrap;
     align-content: space-between;
     animation: fadeInPaintings 0.3s ease-in both;
+}
+
+.Paintings h2 {
+    text-align: center;
 }
 
 .Paintingsgrid img {

@@ -15,13 +15,13 @@ const Contact = ( { lang } ) => {
 
   const handleContentChange = e => setContent(e.target.value)
 
-  const createMessageTimeout = (messageCSS, mFi, mEn) => {
-      setNotification(lang === 'fi' ? mFi : mEn )
-      setNotificationStyle(messageCSS)
-      setTimeout(() => {
-        setNotification('')
-        setNotificationStyle({})
-      }, 5000)
+  function createMessageTimeout(messageCSS, mFi, mEn) {
+    setNotification(lang === 'fi' ? mFi : mEn )
+    setNotificationStyle(messageCSS)
+    setTimeout(() => {
+      setNotification('')
+      setNotificationStyle({})
+    }, 5000)
   }
 
   const handleEmailChange = e => {

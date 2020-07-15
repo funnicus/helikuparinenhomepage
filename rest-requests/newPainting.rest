@@ -1,0 +1,12 @@
+POST http://localhost:3001/api/paintings/
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJpZCI6IjVmMGRlNTJkMDViY2ExMzJlNDc1YTgyNSIsImlhdCI6MTU5NDc2ODM4OX0.nR9UMPBvskpmlI4J8QyYRIRmJ8vjwM2y1ni8jtYpSXw
+
+{
+    "name": "Test collection",
+          "painting": {
+            "name": "Testi1",
+            "desc": "Testitaulu",
+            "img": "placeholder"
+          }
+}
