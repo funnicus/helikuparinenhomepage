@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import loginService from '../services/loginService'
 import paintingsService from '../services/paintings'
 import paintingService from '../services/painting'
+import uploadService from '../services/upload'
 import Message from './Message'
 import Login from './Login'
 import ModifyingPage from './ModifyingPage'
@@ -13,18 +14,21 @@ const AdminPage = () => {
     const [password, setPassword] = useState('')
     const [user, setUser] = useState(null)
     const [notification, setNotification] = useState('')
-    const [dbCollections, setDbCollections] = useState([]) //kesken
+    const [dbCollections, setDbCollections] = useState([])
     const [collection, setCollection] = useState('')
     const [desc, setDesc] = useState('')
     const [name, setName] = useState('')
     const [notificationStyle, setNotificationStyle] = useState({})
-    const [files, setFiles] = useState([])
+    const [files, setFiles] = useState('')
 
     const handlePassChange = e => setPassword(e.target.value)
     const handleCollectionChange = e => setCollection(e.target.value)
     const handleDescChange = e => setDesc(e.target.value)
     const handleNameChange = e => setName(e.target.value)
-    const handleFileChange = e => setFiles(Array.from(e.target.files[0]))
+    const handleFileChange = e => {
+      console.log(files)
+      return setFiles(e.target.files[0])
+    }
     const handleOptionClick = e => setCollection(e.target.value)
 
     useEffect(() => {
@@ -35,6 +39,7 @@ const AdminPage = () => {
           loginService.setToken(user.token) // ehkä turha
           paintingsService.setToken(user.token)
           paintingService.setToken(user.token)
+          uploadService.setToken(user.token)
         }
     }, [])
 
@@ -73,6 +78,7 @@ const AdminPage = () => {
           loginService.setToken(user.token)
           paintingsService.setToken(user.token)
           paintingService.setToken(user.token)
+          uploadService.setToken(user.token)
           setPassword('')
           setUser(user)
           createMessageTimeout({ backgroundColor: 'green', display: 'block' }, 'Kirjauduttu sisään!', 'Logged in!')
@@ -89,20 +95,43 @@ const AdminPage = () => {
         loginService.setToken(null)
         paintingsService.setToken(null)
         paintingService.setToken(null)
+        uploadService.setToken(null)
+      }
+
+      const addImage = async () => {
+        console.log(files)
+        const formData = new FormData()
+        formData.append('file', files)
+        const res = await uploadService.create(formData)
+        console.log(res)
+        return res
       }
 
       const addPainting = async (id) => {
+        const imageFilename = await addImage()
+        const paintingsInDb = await paintingService.getAll()
+        const foundPainting = paintingsInDb.find(p => p.name === name)
+        if(foundPainting !== undefined){
+          createMessageTimeout({ backgroundColor: 'red', display: 'block' }, 'Tämän niminen taulu on jo olemassa!', '...')
+          return 0
+        }
         const paintingObj = {
           name: name,
           desc: desc,
-          img: 'placeholder',
+          img: imageFilename,
           collectionId: id
         }
-        await paintingService.create(paintingObj)
+        return await paintingService.create(paintingObj)
       }
+
 
       const addCollection = async (event) => {
         event.preventDefault()
+
+        if(!collection || !name || !desc || !files) {
+          createMessageTimeout({ backgroundColor: 'red', display: 'block' }, 'Taululta puuttuu nimi, kokoelma, tiedot tai kuva...', '...')
+          return 0
+        }
 
         const collectionObj = {
           name: collection
@@ -114,7 +143,8 @@ const AdminPage = () => {
         if( foundCollection === undefined){
           try{
             const savedCollection = await paintingsService.create(collectionObj)
-            await addPainting(savedCollection.id)
+            const addedPainting = await addPainting(savedCollection.id)
+            if(addedPainting === 0) return 0
           }
           catch(err){
             console.log(err)
@@ -138,83 +168,40 @@ const AdminPage = () => {
         setName('')
         setDesc('')
         setCollection('')
+        setFiles('')
       }
       
       const collectionsSelector = dbCollections.map((c, i) => <option key={c.id} value={c.name} onClick={handleOptionClick}>{c.name}</option>)
 
-      const modifyingPage = () => {
-          return(
-            <div className='admin-page'>
-                <h1>Tervetuloa ylläpitohommiin!</h1>
-                <p>If you are some hacker, pls don't destroy anything ;(</p>
-                <button onClick={handleLogout}>Kirjaudu ulos...</button>
-                <div className='Form'>
-                    <form action="/profile" method="post" encType="multipart/form-data">
-                        <div id='select-collection'>
-                            <input 
-                            type='text'
-                            id='collection'
-                            value={collection}
-                            name='Collection'
-                            placeholder='Kokoelman nimi...'
-                            onChange={e => handleCollectionChange(e)}
-                            />
-                            <select>
-                            <optgroup label="Lisää jo olemassa olevaan kokoelmaan">
-                                {collectionsSelector}
-                            </optgroup>
-                            </select>
-                        </div>
-                        <input 
-                        type='text'
-                        id='name'
-                        value={name}
-                        name='name'
-                        placeholder='taulun nimi'
-                        onChange={e => handleNameChange(e)}
-                        />
-                        <input 
-                        type='text'
-                        id='description'
-                        value={desc}
-                        name='description'
-                        placeholder='xcm x ycm, tekniikka'
-                        onChange={e => handleDescChange(e)}
-                        />
-                        <input 
-                          type="file"
-                          id='painting'
-                          name="Painting" 
-                          onChange={e => handleFileChange(e)}
-                        />
-                        <button id='submit-button' onClick={addCollection}>lataa...</button>
-                    </form>
-                </div>
-            </div>
-          )
-      }
-
     return (
         <div className='AdminPage'>
-            <Message message={notification} style={notificationStyle} />
             {user === null ? 
-            <Login 
-            password={password} 
-            handlePassChange={handlePassChange} 
-            handleLogin={handleLogin} 
-            /> : 
-            <ModifyingPage 
-            collection={collection}
-            handleCollectionChange={handleCollectionChange}
-            name={name}
-            handleNameChange={handleNameChange}
-            desc={desc}
-            handleDescChange={handleDescChange}
-            handleFileChange={handleFileChange}
-            handleLogout={handleLogout}
-            addCollection={addCollection}
-            collectionsSelector={collectionsSelector}
-            />}
+            <div>
+              <Message message={notification} style={notificationStyle} />
+              <Login 
+              password={password} 
+              handlePassChange={handlePassChange} 
+              handleLogin={handleLogin} 
+              />
+            </div> : 
+            <div>
+              <h1>Tervetuloa ylläpitohommiin!</h1>
+              <p>If you are some hacker, pls don't destroy anything ;(</p>
+              <button onClick={handleLogout}>Kirjaudu ulos...</button>
+              <Message message={notification} style={notificationStyle} />
+              <ModifyingPage 
+              collection={collection}
+              handleCollectionChange={handleCollectionChange}
+              name={name}
+              handleNameChange={handleNameChange}
+              desc={desc}
+              handleDescChange={handleDescChange}
+              files={files}
+              handleFileChange={handleFileChange}
+              addCollection={addCollection}
+              collectionsSelector={collectionsSelector}
+              />
+            </div>}
         </div>
     )
 }

@@ -1,11 +1,8 @@
 import React from 'react'
 
-const ModifyingPage = ({ collection, handleCollectionChange, name, handleNameChange,desc, handleDescChange, handleFileChange, handleLogout, addCollection, collectionsSelector }) => {
+const ModifyingPage = ({ collection, handleCollectionChange, name, handleNameChange,desc, handleDescChange, files, handleFileChange, addCollection, collectionsSelector }) => {
     return(
       <div className='admin-page'>
-          <h1>Tervetuloa ylläpitohommiin!</h1>
-          <p>If you are some hacker, pls don't destroy anything ;(</p>
-          <button onClick={handleLogout}>Kirjaudu ulos...</button>
           <div className='Form'>
               <form action="/profile" method="post" encType="multipart/form-data">
                   <div id='select-collection'>
@@ -41,8 +38,8 @@ const ModifyingPage = ({ collection, handleCollectionChange, name, handleNameCha
                   />
                   <input 
                     type="file"
-                    id='painting'
-                    name="Painting" 
+                    id='file'
+                    name="File" 
                     onChange={e => handleFileChange(e)}
                   />
                   <button id='submit-button' onClick={addCollection}>lataa...</button>

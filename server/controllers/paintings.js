@@ -8,7 +8,7 @@ paintingsRouter.use(middleware.tokenExtractor)
 paintingsRouter.get('/', async (request, response) => {
   const collections = await PaintingCollection
     .find({})
-    .populate('paintings', { name: 1, description: 1, id: 1 })
+    .populate('paintings', { name: 1, description: 1, img: 1, id: 1 })
   response.json(collections.map(c => c.toJSON()))
 })
 

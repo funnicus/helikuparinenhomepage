@@ -1,13 +1,10 @@
 const util = require("util");
-const multer = require("multer");
 const config = require('./config')
+const multer = require("multer");
 const GridFsStorage = require("multer-gridfs-storage");
 
   const tokenExtractor = (request, response, next) => {
     const authorization = request.get('authorization')
-    console.log('==0000000000000000000=====')
-    console.log(authorization)
-    console.log('==0000000000000000000=====')
     if (authorization && authorization.toLowerCase().startsWith('bearer ')) {    
       request.token = authorization.substring(7)
     }

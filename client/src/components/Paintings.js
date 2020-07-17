@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import uploadservice from '../services/upload'
 import Painting from './Painting'
 import './Paintings.css'
 
@@ -17,8 +18,9 @@ const Paintings = collection => {
     }
 
     const paintings = collection.paintings.map(p => {
+        const image = `http://localhost:3001/api/upload/images/${p.img}`
         return(
-            <img className='gridPainting' src={p.img} alt={p.name} onClick={() => showImage(p.img, `${p.name}, ${p.dimensions}, ${p.technique}`)}></img>
+            <img className='gridPainting' src={image} alt={p.name} onClick={() => showImage(image, `${p.name} ${p.description}`)}></img>
         )
     })
 

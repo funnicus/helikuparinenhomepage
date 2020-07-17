@@ -19,7 +19,8 @@ mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true})
 app.use(cors())
 app.use(express.json())
 
-app.use(express.static('./build'))
+const reactApp = express.static('./build')
+app.use(reactApp)
 
 app.use('/api/paintings', paintingsRouter)
 app.use('/api/painting', paintingRouter)
@@ -27,5 +28,8 @@ app.use('/api/email', emailRouter)
 app.use('/api/login', loginRouter)
 app.use('/api/user', userRouter)
 app.use('/api/upload', uploadRouter)
+
+//Toimiva, mutta ei välttämättä hyvä ratkaisu urliin itse kiroitetuille routeille
+app.use('*', reactApp)
 
 module.exports = app
