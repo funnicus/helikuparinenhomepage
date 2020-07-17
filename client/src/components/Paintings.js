@@ -18,9 +18,7 @@ const Paintings = collection => {
     }
 
     const paintings = collection.paintings.map(p => {
-        const image
-        if(process.env.NODE_ENV === 'production') image == `http://localhost:3001/api/upload/images/${p.img}`
-        else image == `www.helikuparinen.fi/api/upload/images/${p.img}`
+        const image = `www.helikuparinen.fi/api/upload/images/${p.img}`
         return(
             <img className='gridPainting' src={image} alt={p.name} onClick={() => showImage(image, `${p.name} ${p.description}`)}></img>
         )
