@@ -7,7 +7,7 @@ const paintingRouter = require('./server/controllers/painting')
 const emailRouter = require('./server/controllers/email')
 const loginRouter = require('./server/controllers/login')
 const uploadRouter = require('./server/controllers/upload')
-const userRouter = require('./user')
+//const userRouter = require('./user')
 const mongoose = require('mongoose')
 
 console.log('connecting to', config.MONGODB_URI)
@@ -26,7 +26,7 @@ app.use('/api/paintings', paintingsRouter)
 app.use('/api/painting', paintingRouter)
 app.use('/api/email', emailRouter)
 app.use('/api/login', loginRouter)
-app.use('/api/user', userRouter)
+//app.use('/api/user', userRouter)
 app.use('/api/upload', uploadRouter)
 
 //Toimiva, mutta ei välttämättä hyvä ratkaisu urliin itse kiroitetuille routeille
