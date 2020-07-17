@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const Grid = require('gridfs-stream')
 
 // En tiedä onko tämä hyvä ratkaisu kuvien löytämiseen, mutta se ainakin toimii :D
-const conn = mongoose.createConnection(config.MONGODB_URI)
+const conn = mongoose.createConnection(config.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true})
 let gfs
 conn.once('open', () => {
   gfs = Grid(conn.db, mongoose.mongo)
