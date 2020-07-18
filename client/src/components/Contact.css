@@ -1,5 +1,6 @@
 .Contact {
-    animation: fadeInContact 0.5s ease-in both;
+	animation: fadeInContact 0.5s ease-in both;
+	height: 100vh;
 }
 
 @keyframes fadeInContact {

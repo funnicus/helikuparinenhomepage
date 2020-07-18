@@ -2,7 +2,7 @@
     text-align: center;
     margin-top: 15%;
 	font-family: sans-serif;
-	margin-bottom: 40vh;
+	height: 100vh;
 }
 
 .Header h1 {
@@ -17,7 +17,7 @@
 
 @media only screen and (max-width: 770px) {
 	.Header {
-		margin-top: 40%;
+		padding-top: 40%;
 	}
 }
 

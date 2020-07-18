@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Form from './Form'
 import Message from './Message'
 import emailService from '../services/email'
+import { Helmet } from 'react-helmet'
 import './Contact.css'
 
 const Contact = ( { lang } ) => {
@@ -63,6 +64,13 @@ const Contact = ( { lang } ) => {
 
   return (
     <div className="Contact">
+        <Helmet >
+          <title>Contact me</title>
+          <meta 
+            name='description' 
+            content='You can contact me with the form provided. I try to reply as fast as I can :)' 
+          />
+        </Helmet>
         <Message message={notification} style={notificationStyle} />
         <Form
           handleSubmit={handleSubmit}

@@ -40,7 +40,7 @@ const App = () => {
         </Route>
       </Switch>
       <div className='Footer'>
-        <span>Copyright © Heli Kuparinen 2020 || This is deployed on digital ocean</span>
+        <span>Copyright © Heli Kuparinen 2020</span>
       </div>
     </Router>
   )

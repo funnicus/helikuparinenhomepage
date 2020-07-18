@@ -1,9 +1,11 @@
   .Footer {
     margin: auto;
+    text-align: center;
   }
 
   .Footer span {
       font-size: 0.8em;
+      font-family: sans-serif;
       margin: auto;
       text-align: center;
   }
