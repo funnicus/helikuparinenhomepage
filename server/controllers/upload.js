@@ -51,6 +51,7 @@ uploadRouter.get('/images/:filename', async (req, res) => {
     })
   }
   catch(err){
+    console.log("Bro moment")
     console.log(err)
     res.send(err)
   }

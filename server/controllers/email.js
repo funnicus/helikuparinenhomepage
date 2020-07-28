@@ -30,7 +30,7 @@ emailRouter.post('/', (req, res) => {
 
   const mail = {
     from: email,
-    to: 'jmkupa@utu.fi',  // Change to email address that you want to receive messages on
+    to: process.env.NODE_ENV === 'production' ? 'heli.kuparinen2kolumbus.fi' : 'jmkupa@utu.fi',  // Change to email address that you want to receive messages on
     subject: 'Joku on ottanut sinuun yhteyttä kotisivujesi kautta!',
     text: content
   }

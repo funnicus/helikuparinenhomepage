@@ -6,7 +6,7 @@ let MONGODB_URI = process.env.MONGODB_URI
 const EMAILUSER = process.env.EMAILUSER
 const EMAILPASS = process.env.EMAILPASS
 
-if(process.env.NODE_ENV === 'test'){
+if(process.env.NODE_ENV === 'test' || process.env.NODE_ENV === 'development'){
   MONGODB_URI = process.env.TEST_MONGODB_URI
 }
 
