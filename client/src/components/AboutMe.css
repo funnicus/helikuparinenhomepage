@@ -15,6 +15,9 @@
     .Bio #portrait {
         align-self: flex-start;
     }
+    .CurriculumRow {
+        flex-direction: column;
+    }
 }
 @media only screen and (min-width: 900px) {
     .AboutMe {
@@ -33,6 +36,12 @@
     .Bio #portrait {
         align-self: center;
     }
+    .CurriculumRow {
+        flex-direction: row;
+    }
+    .Desc {
+        margin-left: 10px;
+    }
 }
 
 .AboutMe {
@@ -47,11 +56,16 @@
     margin-top: 40px;
     font-size: 1.25em;
     margin: auto;
+    height: 100vh;
+}
+.Bio-div {
+    display: flex;
+    margin: auto;
+    margin-bottom: 40%;
 }
 .Bio #portrait {
     width: 50%;
     height: auto;
-    flex-basis: 600px;
 }
 .Bio p {
     color: #242424;
@@ -71,6 +85,7 @@
 
 .CurriculumSection {
     margin: auto;
+    width: 80%;
 }
 
 .Curriculum h4 {
@@ -87,13 +102,20 @@
 
 .CurriculumRow {
     display: flex;
-    flex-direction: row;
     margin-top: 10px;
 }
 
 .Desc {
-    margin-left: 10px;
     color: #242424;
+    width: 78%;
+}
+
+.Year {
+    width: 22%;
+}
+
+.trust-pub {
+    text-align: center;
 }
 
 .Statement {

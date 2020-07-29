@@ -8,7 +8,7 @@ import {
 import useWindowDimensions from '../hooks/useWindowDimensions'
 
 const Navbar = ({ id, lang, setLang, setFadein }) => {
-  const [style, setStyle] = useState(false)
+  const [style, setStyle] = useState(true)
   const { height, width } = useWindowDimensions();
 
   const toggleMenu = () => setStyle(!style)

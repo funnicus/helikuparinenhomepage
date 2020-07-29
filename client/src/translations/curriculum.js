@@ -19,10 +19,8 @@ const cvFi = () => {
           <div className='CurriculumRow'><div className='Year'><strong>1995</strong></div><div className='Desc'>Jyväskylän talvi</div></div>
           <div className='CurriculumRow'><div className='Year'><strong>1996</strong></div><div className='Desc'>Seitsemän jättiä, Galleria Pintura, Helsinki</div></div>
           <div className='CurriculumRow'><div className='Year'><strong>1999</strong></div><div className='Desc'>
-            <ul>
-                <li>Grand Tour 99, Galleria Becker, Jyväskylä </li>
-                <li>(Jyväskylän taiteilijaseuran kutsunäyttely)</li>
-            </ul>
+              <p>Grand Tour 99, Galleria Becker, Jyväskylä </p>
+              <p>(Jyväskylän taiteilijaseuran kutsunäyttely)</p>
           </div></div>
           <div className='CurriculumRow'><div className='Year'><strong>2002</strong></div><div className='Desc'>Toi stoori, Stoa galleria, Helsinki</div></div>
           <div className='CurriculumRow'><div className='Year'><strong>2003</strong></div><div className='Desc'>Sankareita ja sivullisia, Porvoon Taidehalli</div></div>
@@ -41,11 +39,9 @@ const cvFi = () => {
           <div className='CurriculumRow'><div className='Year'><strong>1995</strong></div><div className='Desc'>Lumo – matka Itä-Karjalaan, Kuvataideakatemian galleria</div></div>
           <div className='CurriculumRow'><div className='Year'><strong>1996</strong></div><div className='Desc'>Sokeripala, Oulun taidemuseo</div></div>
           <div className='CurriculumRow'><div className='Year'><strong>1997</strong></div><div className='Desc'>
-            <ul>
-              <li>Sokeripala, Myyrmäkitalo, Vantaa</li>
-              <li>Sokeripala, Joensuun taidemuseo</li>
-              <li>Sokeripala, Hämeenlinnan taidemuseo</li>
-            </ul>
+              <p>Sokeripala, Myyrmäkitalo, Vantaa</p>
+              <p>Sokeripala, Joensuun taidemuseo</p>
+              <p>Sokeripala, Hämeenlinnan taidemuseo</p>
           </div></div>
           <div className='CurriculumRow'><div className='Year'><strong>1998</strong></div><div className='Desc'>Sokeripala, Uusikaupunki</div></div>
           <div className='CurriculumRow'><div className='Year'><strong>2002</strong></div><div className='Desc'>Planeetta ja Baldakiini, Galleria Borey, Pietari</div></div>
@@ -67,13 +63,13 @@ const cvFi = () => {
         </div>
         <div className='CurriculumSection'>
           <h4>Luottamustehtävät</h4>
-          <div className='CurriculumRow'><div className='Year'><strong>2014-2016</strong></div><div className='Desc'>Helsingin Taiteilijaseuran hallituksen jäsen</div></div>
+          <div className='trust-pub'>Helsingin Taiteilijaseuran hallituksen jäsen 2014-2016</div>
         </div>
         <div className='CurriculumSection'>
           <h4>Julkaisut</h4>
-          <div className='CurriculumRow'><div className='Desc'>Sokeripala-katalogi 1995</div></div>
-          <div className='CurriculumRow'><div className='Desc'>Taide-lehti 1/95, 5/96</div></div>
-          <div className='CurriculumRow'><div className='Desc'>Circle Quaterly Art Review/5</div></div>
+          <div className='trust-pub'>Sokeripala-katalogi 1995</div>
+          <div className='trust-pub'>Taide-lehti 1/95, 5/96</div>
+          <div className='trust-pub'>Circle Quaterly Art Review/5</div>
       </div>
     </div>
   )
@@ -98,10 +94,8 @@ const cvEn = () => {
           <div className='CurriculumRow'><div className='Year'><strong>1995</strong></div><div className='Desc'>Jyväskylä winter</div></div>
           <div className='CurriculumRow'><div className='Year'><strong>1996</strong></div><div className='Desc'>Seven Gients, Galleria Pintura, Helsinki</div></div>
           <div className='CurriculumRow'><div className='Year'><strong>1999</strong></div><div className='Desc'>
-            <ul>
-                <li>Grand Tour 99, Galleria Becker, Jyväskylä </li>
-                <li>(Invitatinal exhibition of the Jyväskylä Artists' Association)</li>
-            </ul>
+            <p>Grand Tour 99, Galleria Becker, Jyväskylä </p>
+            <p>(Invitatinal exhibition of the Jyväskylä Artists' Association)</p>
           </div></div>
           <div className='CurriculumRow'><div className='Year'><strong>2002</strong></div><div className='Desc'>Toi stoori, Stoa gallery, Helsinki</div></div>
           <div className='CurriculumRow'><div className='Year'><strong>2003</strong></div><div className='Desc'>Heroes and bystanders, Porvoo Art Hall</div></div>
@@ -120,11 +114,9 @@ const cvEn = () => {
           <div className='CurriculumRow'><div className='Year'><strong>1995</strong></div><div className='Desc'>Lumo - trip to East Karelia, Gallery of the Academy of Fine Arts</div></div>
           <div className='CurriculumRow'><div className='Year'><strong>1996</strong></div><div className='Desc'>Sugar piece, Oulu Art Museum</div></div>
           <div className='CurriculumRow'><div className='Year'><strong>1997</strong></div><div className='Desc'>
-            <ul>
-              <li>Sugar piece, Myyrmäki house, Vantaa</li>
-              <li>Sugar piece, Joensuu Art Museum</li>
-              <li>Sugar piece, Hämeenlinna Art Museum</li>
-            </ul>
+            <p>Sugar piece, Myyrmäki house, Vantaa</p>
+            <p>Sugar piece, Joensuu Art Museum</p>
+            <p>Sugar piece, Hämeenlinna Art Museum</p>
           </div></div>
           <div className='CurriculumRow'><div className='Year'><strong>1998</strong></div><div className='Desc'>Sugar piece, Uusikaupunki</div></div>
           <div className='CurriculumRow'><div className='Year'><strong>2002</strong></div><div className='Desc'>Planet and Canopy, Gallery Borey, St. Petersburg</div></div>
@@ -146,13 +138,13 @@ const cvEn = () => {
         </div>
         <div className='CurriculumSection'>
           <h4>Trust</h4>
-          <div className='CurriculumRow'><div className='Desc'>Member of the Board of the Helsinki Artists' Association 2014–2016</div></div>
+          <div className='trust-pub'>Member of the Board of the Helsinki Artists' Association 2014–2016</div>
         </div>
         <div className='CurriculumSection'>
           <h4>Publications</h4>
-          <div className='CurriculumRow'><div className='Desc'>Sugar Piece Catalog 1996</div></div>
-          <div className='CurriculumRow'><div className='Desc'>Art Magazine 1/95, 5/96</div></div>
-          <div className='CurriculumRow'><div className='Desc'>Circle Quarterly Art Review / 5</div></div>
+          <div className='trust-pub'>Sugar Piece Catalog 1996</div>
+          <div className='trust-pub'>Art Magazine 1/95, 5/96</div>
+          <div className='trust-pub'>Circle Quarterly Art Review / 5</div>
       </div>
     </div>
   )

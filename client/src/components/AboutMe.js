@@ -18,8 +18,10 @@ const AboutMe = ({ lang }) => {
                 in painting.' />
       </Helmet>
       <div className='Bio'>
-        {lang === 'fi' ? aboutmeTranslation.aboutmeFi() : aboutmeTranslation.aboutmeEn()}
-        <div id='portrait'><img src={selfPortrait} alt='self-portrait' /></div>
+        <div className='Bio-div'>
+          {lang === 'fi' ? aboutmeTranslation.aboutmeFi() : aboutmeTranslation.aboutmeEn()}
+          <div id='portrait'><img src={selfPortrait} alt='self-portrait' /></div>
+        </div>
       </div>
       <hr></hr>
       {lang === 'fi' ? cvTranslation.cvFi() : cvTranslation.cvEn()}
