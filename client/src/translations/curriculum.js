@@ -57,9 +57,9 @@ const cvFi = () => {
         <div className='CurriculumSection'>
           <h4>Opetustehtävät</h4>
           <div className='CurriculumRow'><div className='Year'><strong>1996</strong></div><div className='Desc'>Yleisradion kuvataidekerhon opettaja</div></div>
-          <div className='CurriculumRow'><div className='Year'><strong>2008-2011</strong></div><div className='Desc'>MLL:n kuvataidekerhon opettaja</div></div>
+          <div className='CurriculumRow'><div className='Year'><strong>2008-11</strong></div><div className='Desc'>MLL:n kuvataidekerhon opettaja</div></div>
           <div className='CurriculumRow'><div className='Year'><strong>2008-</strong></div><div className='Desc'>Pohjois-Helsingin kuvataidekoulun sijaisopettaja</div></div>
-          <div className='CurriculumRow'><div className='Year'><strong>2010-2015</strong></div><div className='Desc'>Helsingin Taiteilijaseuran kuvataidekoulun opettaja</div></div>
+          <div className='CurriculumRow'><div className='Year'><strong>2010-15</strong></div><div className='Desc'>Helsingin Taiteilijaseuran kuvataidekoulun opettaja</div></div>
         </div>
         <div className='CurriculumSection'>
           <h4>Luottamustehtävät</h4>
@@ -132,9 +132,9 @@ const cvEn = () => {
         <div className='CurriculumSection'>
           <h4>Teaching Responsibilities</h4>
           <div className='CurriculumRow'><div className='Year'><strong>1996</strong></div><div className='Desc'>Teacher at the YLE Finnish Broadcasting Company Arts Club</div></div>
-          <div className='CurriculumRow'><div className='Year'><strong>2008-2011</strong></div><div className='Desc'>Teacher at the Mannerheim Child Welfare Union Fine Arts Club</div></div>
+          <div className='CurriculumRow'><div className='Year'><strong>2008-11</strong></div><div className='Desc'>Teacher at the Mannerheim Child Welfare Union Fine Arts Club</div></div>
           <div className='CurriculumRow'><div className='Year'><strong>2008-</strong></div><div className='Desc'>Teacher at the Helsinki Artists' Association School of Fine Arts</div></div>
-          <div className='CurriculumRow'><div className='Year'><strong>2010-2015</strong></div><div className='Desc'>Deputy teacher at the Northern Helsinki School of Fine Arts</div></div>
+          <div className='CurriculumRow'><div className='Year'><strong>2010-15</strong></div><div className='Desc'>Deputy teacher at the Northern Helsinki School of Fine Arts</div></div>
         </div>
         <div className='CurriculumSection'>
           <h4>Trust</h4>
