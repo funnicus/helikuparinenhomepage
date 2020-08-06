@@ -22,8 +22,8 @@
 }
 
 #shownImage {
-    width: 70%;
-    height: auto;
+    height: 70vh;
+    width: auto;
 }
 
 .Painting p {

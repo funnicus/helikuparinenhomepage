@@ -20,10 +20,10 @@
 }
 
 .Paintingsgrid img {
-    max-width: 30%;
+    height: 90vh;
+    width: auto;
     margin: auto;
     margin-top: 20px;
-    height: auto;
     transition: 0.5s ease-in-out;
 }
 
