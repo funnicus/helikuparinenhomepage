@@ -8,8 +8,7 @@ const aboutmeFi = () => {
                 Olen helsinkiläinen taidemaalari, joka työskentelee pääasiassa öljyvärein.
                 Tällä hetkellä olen kiinnostunut erityisesti ihmisten kuvaamisesta ja 
                 selaan innokkaasti vanhoja valokuvia löytääkseni materiaalia maalauksiani varten.
-                Taustalla minulla on perusteelliset nuoruudessa hankitut elävän mallin piirustusopinnot
-                sekä akateeminen loppututkinto maalaustaiteesta.
+                Taustalla minulla on tutkinto kuvataideakatemiasta.
             </p>
         </div>
     )
@@ -22,9 +21,7 @@ const aboutmeEn = () => {
             <p>
                 I am a Helsinki-based artist who mainly works with oilpaints. 
                 Currently, I am particulary interested in portraying people in
-                my works. On the background, I have a solid understanding 
-                of the living model, aqcuired from my studies, as well as an academic degree
-                in painting.
+                my works. On the background, I have a academic degree in painting.
             </p>
         </div>
     )

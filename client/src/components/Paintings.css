@@ -1,17 +1,19 @@
 .Paintings h2 {
-    margin-top: 10vh;
+    margin-top: 20vh;
     font-size: 1.5em;
 }
 
 .Paintings {
     font-family: sans-serif;
+    margin-bottom: 20vh;
 }
 
 .Paintingsgrid {
     display: flex;
-    margin-top: 10vh;
+    margin-top: 2vh;
     flex-wrap: wrap;
-    align-content: space-between;
+    width: 60%;
+    margin: auto;
     animation: fadeInPaintings 0.3s ease-in both;
 }
 
@@ -20,10 +22,10 @@
 }
 
 .Paintingsgrid img {
-    height: 90vh;
+    height: 70vh;
     width: auto;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 80px;
     transition: 0.5s ease-in-out;
 }
 
@@ -37,7 +39,8 @@
 @media only screen and (max-width: 600px) {
     .Paintingsgrid img {
         max-width: 80%;
-        margin-top: 10px;
+        height: auto;
+        margin-top: 20px;
     }
 }
 
