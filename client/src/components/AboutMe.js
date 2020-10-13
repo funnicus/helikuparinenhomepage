@@ -17,16 +17,18 @@ const AboutMe = ({ lang }) => {
                 of the living model, aqcuired from my studies, as well as an academic degree
                 in painting.' />
       </Helmet>
-      <section className='Bio'>
+      <section id='about-me-bio' className='Bio'>
         <div className='Bio-div'>
           {lang === 'fi' ? aboutmeTranslation.aboutmeFi() : aboutmeTranslation.aboutmeEn()}
           <div id='portrait'><img src={selfPortrait} alt='self-portrait' /></div>
         </div>
       </section>
       <hr></hr>
-      {lang === 'fi' ? cvTranslation.cvFi() : cvTranslation.cvEn()}
+      <section id='curriculum-vitae'>
+        {lang === 'fi' ? cvTranslation.cvFi() : cvTranslation.cvEn()}
+      </section>
       <hr></hr>
-      <section className='Statement'>
+      <section id='stmnt' className='Statement'>
           {lang === 'fi' ? statementTranslation.statementFi() : statementTranslation.statementEn()}
       </section>
       <hr></hr>

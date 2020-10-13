@@ -48,7 +48,6 @@
 
 .AboutMe {
     margin: auto;
-    margin-top: 10vh;
     font-family: sans-serif;
     animation: fadeInAbout 0.5s ease-in both;
 }
@@ -129,6 +128,10 @@
 .Statement p {
     text-align: left;
     color: #242424;
+}
+
+section {
+    scroll-margin-top: 35px;
 }
 
 hr {
