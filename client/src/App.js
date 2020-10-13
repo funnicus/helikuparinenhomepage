@@ -21,13 +21,13 @@ const App = () => {
       <Switch>
         <Route path='/about'>
           <Navbar id='none' lang={lang} setLang={setLang} setFadein={setFadein}/>
-          <nav id='about-me-nav'>
+          {width > 770 ? <nav id='about-me-nav'>
             <ul>
               <li><a href='#about-me-bio'>About me</a></li>
               <li><a href='#curriculum-vitae'>Curriculum</a></li>
               <li><a href='#stmnt'>Statement</a></li>
             </ul>
-          </nav>
+          </nav> : null}
           <AboutMe lang={lang} />
         </Route>
         <Route path='/paintings'>
