@@ -3,17 +3,7 @@ import Paintings from './Paintings'
 import paintingsService from '../services/paintings'
 import { Helmet } from 'react-helmet'
 import './Gallery.css'
-import {
-    aamu,
-    arktinenAnkka,
-    iloisestiSekaisin,
-    laivue,
-    leivoksetLeipa,
-    marieAntoinette,
-    melankolia,
-    robespierre,
-    suomenSuvi
-} from '../images/index'
+import { Collection } from 'mongoose'
 
 const Gallery = () => {
     const [dbCollections, setDbCollections] = useState([])
@@ -22,13 +12,12 @@ const Gallery = () => {
         const fetchCollections = async () => {
           const receivedCollections = await paintingsService.getAll()
           setDbCollections(receivedCollections)
-          console.log(receivedCollections)
         }
         fetchCollections()
       }, [])
 
     const collections = dbCollections.map(collection => {
-        return <Paintings name={collection.name} paintings={collection.paintings}/>
+        return <Paintings name={collection.name} paintings={collection.paintings} key={collection.name} />
     })
 
     return (

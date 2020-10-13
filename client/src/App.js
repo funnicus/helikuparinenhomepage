@@ -39,9 +39,9 @@ const App = () => {
           <HeliKuparinen lang={lang} />
         </Route>
       </Switch>
-      <div className='Footer'>
+      <footer className='Footer'>
         <span>Copyright © Heli Kuparinen 2020</span>
-      </div>
+      </footer>
     </Router>
   )
 }

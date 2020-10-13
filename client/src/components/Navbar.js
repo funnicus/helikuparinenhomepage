@@ -16,7 +16,7 @@ const Navbar = ({ id, lang, setLang, setFadein }) => {
   return (
         <div>
           <button id='dropdown-btn' onClick={toggleMenu}><FontAwesomeIcon icon={faBars} /></button>
-          <div id={id} className="Navbar" style={style && width < 770 ? { display: 'none' } : { display: 'flex' }}>
+          <nav id={id} className="Navbar" style={style && width < 770 ? { display: 'none' } : { display: 'flex' }}>
             <ul id='Left'>
                 <li><Link to="/" onClick={() => setFadein('none')}>Heli Kuparinen</Link></li>
                 <li><Link to="/about" onClick={() => setFadein('none')}>{lang === 'fi' ? 'Tietoa minusta' : 'About me' }</Link></li>
@@ -27,7 +27,7 @@ const Navbar = ({ id, lang, setLang, setFadein }) => {
               <li><button onClick={() => setLang('fi')}>FI</button></li>
               <li><button onClick={() => setLang('en')}>EN</button></li>
             </ul>
-          </div>
+          </nav>
         </div>
   )
 }

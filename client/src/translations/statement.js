@@ -2,7 +2,7 @@ import React from 'react'
 
 const statementFi = () => {
     return(
-        <div>
+        <article>
             <h2>Statement</h2>
             <p>
                 Usein käsittelen teoksissani nykyaikaa etäännytetysti menneisyyden kautta. 
@@ -34,13 +34,13 @@ const statementFi = () => {
                 merivirtojen liikkeestä. On erikoista, että en maalatessani arktista kumiankkaa kuitenkaan 
                 tiennyt tästä onnettomuudesta mitään. Luin siitä vasta paljon myöhemmin.
             </p>
-        </div>
+        </article>
     )
 }
 
 const statementEn = () => {
     return(
-        <div>
+        <article>
             <h2>Artist´s statement</h2>
             <p>
                 In my works, I often deal with the present in a distant way through the past.
@@ -76,7 +76,7 @@ const statementEn = () => {
                 have at the same time provided scientists with valuable information about the movement of sea currents. However, 
                 it is strange that when I painted the Arctic rubber duck, I knew nothing about this accident. I only read about it much later.
             </p>
-        </div>
+        </article>
     )
 }
 

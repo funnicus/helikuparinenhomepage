@@ -2,7 +2,7 @@ import React from 'react'
 
 const aboutmeFi = () => {
     return(
-        <div>
+        <article>
             <h2>Hei</h2>
             <p>
                 Olen helsinkiläinen taidemaalari, joka työskentelee pääasiassa öljyvärein.
@@ -10,20 +10,20 @@ const aboutmeFi = () => {
                 selaan innokkaasti vanhoja valokuvia löytääkseni materiaalia maalauksiani varten.
                 Taustalla minulla on tutkinto kuvataideakatemiasta.
             </p>
-        </div>
+        </article>
     )
 }
 
 const aboutmeEn = () => {
     return(
-        <div>
+        <article>
             <h2>Hi</h2>
             <p>
                 I am a Helsinki-based artist who mainly works with oilpaints. 
                 Currently, I am particulary interested in portraying people in
                 my works. On the background, I have a academic degree in painting.
             </p>
-        </div>
+        </article>
     )
 }
 

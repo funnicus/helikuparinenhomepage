@@ -14,6 +14,7 @@
     flex-wrap: wrap;
     width: 60%;
     margin: auto;
+    align-content: flex-start;
     animation: fadeInPaintings 0.3s ease-in both;
 }
 
