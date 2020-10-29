@@ -7,9 +7,18 @@ const paintingSchema = mongoose.Schema({
     unique: true,
     required: true
   },
+  nameEn: {
+    type: String,
+    unique: true,
+    required: true
+  },
   description: {
       type: String,
       require: true
+  },
+  descriptionEn: {
+    type: String,
+    require: true
   },
   img: String,
   paintingCollection: {

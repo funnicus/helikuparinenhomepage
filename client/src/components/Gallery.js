@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet'
 import './Gallery.css'
 import { Collection } from 'mongoose'
 
-const Gallery = () => {
+const Gallery = ({ lang }) => {
     const [dbCollections, setDbCollections] = useState([])
 
     useEffect(() => {
@@ -17,7 +17,7 @@ const Gallery = () => {
       }, [])
 
     const collections = dbCollections.map(collection => {
-        return <Paintings name={collection.name} paintings={collection.paintings} key={collection.name} />
+        return <Paintings lang={lang} name={collection.name} nameEn={collection.nameEn} paintings={collection.paintings} key={collection.name} />
     })
 
     return (

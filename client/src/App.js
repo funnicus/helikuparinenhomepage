@@ -32,7 +32,7 @@ const App = () => {
         </Route>
         <Route path='/paintings'>
           <Navbar id='none' lang={lang} setLang={setLang} setFadein={setFadein}/>
-          <Gallery />
+          <Gallery lang={lang} />
         </Route>
         <Route path='/contact'>
           <Navbar id='none' lang={lang} setLang={setLang} setFadein={setFadein}/>

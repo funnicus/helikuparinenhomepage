@@ -7,6 +7,11 @@ const collectionSchema = mongoose.Schema({
     unique: true,
     required: true
   },
+  nameEn: {
+    type: String,
+    unique: true,
+    required: true
+  },
   paintings: [
     {
       type: mongoose.Schema.Types.ObjectId,

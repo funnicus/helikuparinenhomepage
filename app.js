@@ -10,9 +10,9 @@ const uploadRouter = require('./server/controllers/upload')
 //const userRouter = require('./user')
 const mongoose = require('mongoose')
 
-console.log('connecting to', config.MONGODB_URI)
-
 const mongoUrl = config.MONGODB_URI
+
+console.log('connecting to', mongoUrl)
 
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true})
 
@@ -29,7 +29,7 @@ app.use('/api/login', loginRouter)
 //app.use('/api/user', userRouter)
 app.use('/api/upload', uploadRouter)
 
-//Toimiva, mutta ei välttämättä hyvä ratkaisu urliin itse kiroitetuille routeille
+//Toimiva, mutta ei välttämättä hyvä ratkaisu urliin itse kirjoitetuille routeille
 app.use('*', reactApp)
 
 module.exports = app

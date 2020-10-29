@@ -10,14 +10,21 @@ import Gallery from './Gallery'
 import './AdminPage.css'
 import './Form.css'
 
+/**
+ * Sori kun tämä koodi on nii hirveetä spagettia hyvä kolleega
+ */
+
 const AdminPage = () => {
     const [password, setPassword] = useState('')
     const [user, setUser] = useState(null)
     const [notification, setNotification] = useState('')
     const [dbCollections, setDbCollections] = useState([])
     const [collection, setCollection] = useState('')
+    const [collectionEn, setCollectionEn] = useState('')
     const [desc, setDesc] = useState('')
     const [name, setName] = useState('')
+    const [descEn, setDescEn] = useState('')
+    const [nameEn, setNameEn] = useState('')
     const [notificationStyle, setNotificationStyle] = useState({})
     const [files, setFiles] = useState('')
 
@@ -25,11 +32,18 @@ const AdminPage = () => {
     const handleCollectionChange = e => setCollection(e.target.value)
     const handleDescChange = e => setDesc(e.target.value)
     const handleNameChange = e => setName(e.target.value)
+    const handleCollectionChangeEn = e => setCollectionEn(e.target.value)
+    const handleDescChangeEn = e => setDescEn(e.target.value)
+    const handleNameChangeEn = e => setNameEn(e.target.value)
     const handleFileChange = e => {
       console.log(files)
       return setFiles(e.target.files[0])
     }
-    const handleOptionClick = e => setCollection(e.target.value)
+    const handleOptionClick = e => {
+      const foundCollection = dbCollections.find(c => c.name === e.target.value)
+      setCollection(e.target.value)
+      setCollectionEn(foundCollection.nameEn)
+    }
 
     useEffect(() => {
         const loggedUserJSON = window.localStorage.getItem('loggedUser')
@@ -118,6 +132,8 @@ const AdminPage = () => {
         const paintingObj = {
           name: name,
           desc: desc,
+          nameEn: nameEn,
+          descEn: descEn,
           img: imageFilename,
           collectionId: id
         }
@@ -134,12 +150,12 @@ const AdminPage = () => {
         }
 
         const collectionObj = {
-          name: collection
+          name: collection,
+          nameEn: collectionEn
         }
         
         const foundCollection = dbCollections.find(c => c.name === collection)
 
-        console.log(foundCollection)
         if( foundCollection === undefined){
           try{
             const savedCollection = await paintingsService.create(collectionObj)
@@ -168,10 +184,13 @@ const AdminPage = () => {
         setName('')
         setDesc('')
         setCollection('')
+        setNameEn('')
+        setDescEn('')
+        setCollectionEn('')
         setFiles('')
       }
       
-      const collectionsSelector = dbCollections.map((c, i) => <option key={c.id} value={c.name} onClick={handleOptionClick}>{c.name}</option>)
+    const collectionsSelector = dbCollections.map((c, i) => <option key={c.id} value={c.name} onClick={handleOptionClick}>{c.name}</option>)
 
     return (
         <div className='AdminPage'>
@@ -191,11 +210,20 @@ const AdminPage = () => {
               <Message message={notification} style={notificationStyle} />
               <ModifyingPage 
               collection={collection}
+              collectionEn={collectionEn}
               handleCollectionChange={handleCollectionChange}
+              handleCollectionChangeEn={handleCollectionChangeEn}
+
               name={name}
+              nameEn={nameEn}
               handleNameChange={handleNameChange}
+              handleNameChangeEn={handleNameChangeEn}
+
               desc={desc}
+              descEn={descEn}
               handleDescChange={handleDescChange}
+              handleDescChangeEn={handleDescChangeEn}
+
               files={files}
               handleFileChange={handleFileChange}
               addCollection={addCollection}

@@ -32,6 +32,8 @@ paintingRouter.post('/', async (request, response) => {
   const painting = new Painting({
       name: body.name,
       description: body.desc,
+      nameEn: body.nameEn,
+      descriptionEn: body.descEn,
       img: body.img,
       paintingCollection: paintingCollection._id
   })

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ModifyingPage = ({ collection, handleCollectionChange, name, handleNameChange,desc, handleDescChange, files, handleFileChange, addCollection, collectionsSelector }) => {
+const ModifyingPage = ({ collection, collectionEn, handleCollectionChange, handleCollectionChangeEn, name, nameEn, handleNameChange, handleNameChangeEn, desc, descEn, handleDescChange, handleDescChangeEn, files, handleFileChange, addCollection, collectionsSelector }) => {
     return(
       <div className='admin-page'>
           <div className='Form'>
@@ -13,6 +13,14 @@ const ModifyingPage = ({ collection, handleCollectionChange, name, handleNameCha
                       name='Collection'
                       placeholder='Kokoelman nimi...'
                       onChange={e => handleCollectionChange(e)}
+                      />
+                      <input 
+                      type='text'
+                      id='collectionEn'
+                      value={collectionEn}
+                      name='CollectionEn'
+                      placeholder='Kokoelman nimi englanniksi...'
+                      onChange={e => handleCollectionChangeEn(e)}
                       />
                       <select>
                       <optgroup label="Lisää jo olemassa olevaan kokoelmaan">
@@ -30,11 +38,27 @@ const ModifyingPage = ({ collection, handleCollectionChange, name, handleNameCha
                   />
                   <input 
                   type='text'
+                  id='nameEn'
+                  value={nameEn}
+                  name='nameEn'
+                  placeholder='taulun nimi engalnniksi'
+                  onChange={e => handleNameChangeEn(e)}
+                  />
+                  <input 
+                  type='text'
                   id='description'
                   value={desc}
                   name='description'
                   placeholder='xcm x ycm, tekniikka'
                   onChange={e => handleDescChange(e)}
+                  />
+                  <input 
+                  type='text'
+                  id='descriptionEn'
+                  value={descEn}
+                  name='descriptionEn'
+                  placeholder='xcm x ycm, technique'
+                  onChange={e => handleDescChangeEn(e)}
                   />
                   <input 
                     type="file"
