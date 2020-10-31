@@ -51,8 +51,8 @@ const cvFi = () => {
           <div className='CurriculumRow'><div className='Year'><strong>2017</strong></div><div className='Desc'>Quintet - Disappearance, Kanneltalo Gallery, Helsinki</div></div>
         </div>
         <div className='CurriculumSection'>
-          <h4>Jäsennyydet</h4>
-          <div className='CurriculumRow'><div className='Year'><strong>1988</strong></div><div className='Desc'>Taidemaalariliitto Helsingin Taiteilijaseura</div></div>
+          <h4>Jäsenyydet</h4>
+          <div id='memberships'>Taidemaalariliitto, Helsingin Taiteilijaseura</div>
         </div>
         <div className='CurriculumSection'>
           <h4>Opetustehtävät</h4>
@@ -127,7 +127,7 @@ const cvEn = () => {
         </div>
         <div className='CurriculumSection'>
           <h4>Memberships</h4>
-          <div className='CurriculumRow'><div className='Year'><strong>1988</strong></div><div className='Desc'>Finnish Painters 'Association, Helsinki Artists' Association</div></div>
+          <div id='memberships'>Finnish Painters 'Association, Helsinki Artists' Association</div>
         </div>
         <div className='CurriculumSection'>
           <h4>Teaching Responsibilities</h4>

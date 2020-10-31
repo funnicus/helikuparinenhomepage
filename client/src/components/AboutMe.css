@@ -130,6 +130,10 @@
     color: #242424;
 }
 
+#memberships {
+    text-align: center;
+}
+
 section {
     scroll-margin-top: 35px;
 }
