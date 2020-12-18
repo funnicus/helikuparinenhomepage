@@ -79,7 +79,8 @@ const AdminPage = () => {
 
     const handleLogin = async (event) => {
         event.preventDefault()
-        const username = 'MarkoK2020'
+        //vaihda tarvittaessa
+        const username = 'admin'
         try {
           const user = await loginService.login({
             username, password,
