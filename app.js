@@ -14,6 +14,8 @@ const uploadRouter = require('./server/controllers/upload')
 
 const mongoose = require('mongoose')
 
+mongoose.set('useCreateIndex', true)
+
 const mongoUrl = config.MONGODB_URI
 
 console.log('connecting to', mongoUrl)
