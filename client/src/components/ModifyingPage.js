@@ -41,7 +41,7 @@ const ModifyingPage = ({ collection, collectionEn, handleCollectionChange, handl
                   id='nameEn'
                   value={nameEn}
                   name='nameEn'
-                  placeholder='taulun nimi engalnniksi'
+                  placeholder='taulun nimi englanniksi'
                   onChange={e => handleNameChangeEn(e)}
                   />
                   <input 
@@ -49,7 +49,7 @@ const ModifyingPage = ({ collection, collectionEn, handleCollectionChange, handl
                   id='description'
                   value={desc}
                   name='description'
-                  placeholder='xcm x ycm, tekniikka'
+                  placeholder='xcm x ycm, tekniikka, vuosi'
                   onChange={e => handleDescChange(e)}
                   />
                   <input 
@@ -57,7 +57,7 @@ const ModifyingPage = ({ collection, collectionEn, handleCollectionChange, handl
                   id='descriptionEn'
                   value={descEn}
                   name='descriptionEn'
-                  placeholder='xcm x ycm, technique'
+                  placeholder='xcm x ycm, technique, year'
                   onChange={e => handleDescChangeEn(e)}
                   />
                   <input 

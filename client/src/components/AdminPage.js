@@ -11,10 +11,11 @@ import './AdminPage.css'
 import './Form.css'
 
 /**
- * Sori kun tämä koodi on nii hirveetä spagettia hyvä kolleega
+ * Sori kun tämä koodi on nii hirveetä spagettia tuleva minä tai jokin muu :D
  */
 
 const AdminPage = () => {
+  //muutama tila
     const [password, setPassword] = useState('')
     const [user, setUser] = useState(null)
     const [notification, setNotification] = useState('')
@@ -28,6 +29,7 @@ const AdminPage = () => {
     const [notificationStyle, setNotificationStyle] = useState({})
     const [files, setFiles] = useState('')
 
+    //muutama handleChange
     const handlePassChange = e => setPassword(e.target.value)
     const handleCollectionChange = e => setCollection(e.target.value)
     const handleDescChange = e => setDesc(e.target.value)
@@ -35,10 +37,12 @@ const AdminPage = () => {
     const handleCollectionChangeEn = e => setCollectionEn(e.target.value)
     const handleDescChangeEn = e => setDescEn(e.target.value)
     const handleNameChangeEn = e => setNameEn(e.target.value)
+
     const handleFileChange = e => {
       console.log(files)
       return setFiles(e.target.files[0])
     }
+
     const handleOptionClick = e => {
       const foundCollection = dbCollections.find(c => c.name === e.target.value)
       setCollection(e.target.value)
@@ -66,6 +70,7 @@ const AdminPage = () => {
         fetchCollections()
       }, [])
 
+      //hardkoodattu kieli notifikaatioita varten
     const lang = 'fi'
 
     function createMessageTimeout(messageCSS, mFi, mEn) {
@@ -113,6 +118,8 @@ const AdminPage = () => {
         uploadService.setToken(null)
       }
 
+      //Funktio lisää tilassa olevan kuvan tietokantaan
+      //ja sitä kutsutaan addPainting() -funktiossa
       const addImage = async () => {
         console.log(files)
         const formData = new FormData()
@@ -122,6 +129,8 @@ const AdminPage = () => {
         return res
       }
 
+      //Funktio lisää tiedot taulusta tietokantaan
+      //ja sitä kutsutaan addCollection() -funktiossa
       const addPainting = async (id) => {
         const imageFilename = await addImage()
         const paintingsInDb = await paintingService.getAll()
@@ -155,9 +164,12 @@ const AdminPage = () => {
           nameEn: collectionEn
         }
         
+        //Katsotaan, josko tietokannasta löytyisi jo kokoelma samalla nimellä
         const foundCollection = dbCollections.find(c => c.name === collection)
 
-        if( foundCollection === undefined){
+        //Jos ei niin luodaan uusi kokoelma ja lisätään taulu siihen
+        //muuten lisätään taulu jo olemassa olevaan kokoelmaan
+        if(foundCollection === undefined){
           try{
             const savedCollection = await paintingsService.create(collectionObj)
             const addedPainting = await addPainting(savedCollection.id)
@@ -191,8 +203,10 @@ const AdminPage = () => {
         setFiles('')
       }
       
+    //luodaan selectori käyttöliittymä, josta voidaan valita jo olemassa olevia kokoelmia
     const collectionsSelector = dbCollections.map((c, i) => <option key={c.id} value={c.name} onClick={handleOptionClick}>{c.name}</option>)
 
+    //propseja on kyllä tässä ihan liikaa XD
     return (
         <div className='AdminPage'>
             {user === null ? 

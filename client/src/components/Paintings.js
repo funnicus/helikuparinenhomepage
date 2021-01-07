@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import uploadservice from '../services/upload'
 import Painting from './Painting'
 import './Paintings.css'
 
