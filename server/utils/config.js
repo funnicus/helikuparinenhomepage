@@ -15,5 +15,6 @@ module.exports = {
   MONGODB_URI,
   PORT,
   EMAILUSER,
+  EMAILRECEIVER,
   EMAILPASS
 }

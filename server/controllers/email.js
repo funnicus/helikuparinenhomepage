@@ -35,6 +35,8 @@ emailRouter.post('/', (req, res) => {
     text: content
   }
 
+  console.log(mail)
+
   transporter.sendMail(mail, (err, data) => {
     if (err) {
       res.json({
