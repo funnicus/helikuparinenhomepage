@@ -6,7 +6,6 @@ import uploadService from '../services/upload'
 import Message from './Message'
 import Login from './Login'
 import ModifyingPage from './ModifyingPage'
-import Gallery from './Gallery'
 import './AdminPage.css'
 import './Form.css'
 

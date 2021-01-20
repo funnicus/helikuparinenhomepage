@@ -27,4 +27,14 @@ const create = async formData => {
   return response.data
 }
 
-export default { setToken, getAll, getOneImage, create }
+const remove = async id => {
+  const config = {
+    headers: { 
+      Authorization: token 
+    },
+  }
+  const response = await axios.delete(`${baseUrl}/images/${id}`, config)
+  return response.data
+}
+
+export default { setToken, getAll, getOneImage, create, remove }

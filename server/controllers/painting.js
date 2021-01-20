@@ -46,4 +46,12 @@ paintingRouter.post('/', async (request, response) => {
 
 })
 
+paintingRouter.delete('/:id', async (req, res) => {
+  try {
+    await PaintingCollection.findByIdAndRemove(req.params.id)
+  } catch(err) {
+    console.error('Could not delete image!')
+  }
+})
+
 module.exports = paintingRouter

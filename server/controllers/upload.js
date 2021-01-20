@@ -1,4 +1,5 @@
 const uploadRouter = require('express').Router()
+const jwt = require('jsonwebtoken')
 const middleware = require("../utils/middleware")
 const config = require('../utils/config')
 const mongoose = require('mongoose')
@@ -59,6 +60,12 @@ uploadRouter.get('/images/:filename', async (req, res) => {
 // =======================================================================================
 
 uploadRouter.post('/', async (req, res) => {
+
+  const decodedToken = jwt.verify(request.token, process.env.SECRET)  
+  if (!request.token || !decodedToken.id) {    
+    return response.status(401).json({ error: 'token missing or invalid' })  
+  }
+
   try {
     await middleware.uploadFilesMiddleware(req, res)
     console.log(req.file)
@@ -71,6 +78,21 @@ uploadRouter.post('/', async (req, res) => {
     console.log(error);
     return res.send(`Error when trying upload image: ${error}`)
   }
+})
+
+uploadRouter.delete('/images/:filename', (req, res) => {
+
+    const decodedToken = jwt.verify(request.token, process.env.SECRET)  
+    if (!request.token || !decodedToken.id) {    
+      return response.status(401).json({ error: 'token missing or invalid' })  
+    }
+
+    gfs.remove({ filename: req.params.filename, root: 'photos' }, (err, gridStore) => {
+      if(err){
+        return res.status(404).json({ error: err })
+      }
+      res.redirect('/')
+    })
 })
 
 module.exports = uploadRouter
