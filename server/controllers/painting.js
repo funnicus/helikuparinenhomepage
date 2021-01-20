@@ -47,6 +47,10 @@ paintingRouter.post('/', async (request, response) => {
 })
 
 paintingRouter.delete('/:id', async (req, res) => {
+  const decodedToken = jwt.verify(request.token, process.env.SECRET)  
+  if (!request.token || !decodedToken.id) {    
+    return response.status(401).json({ error: 'token missing or invalid' })  
+  }
   try {
     await PaintingCollection.findByIdAndRemove(req.params.id)
   } catch(err) {

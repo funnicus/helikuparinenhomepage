@@ -4,6 +4,9 @@ const middleware = require("../utils/middleware")
 const config = require('../utils/config')
 const mongoose = require('mongoose')
 const Grid = require('gridfs-stream')
+const Painting = require('../models/painting')
+
+uploadRouter.use(middleware.tokenExtractor)
 
 // En tiedä onko tämä hyvä ratkaisu kuvien löytämiseen, mutta se ainakin toimii :D
 const conn = mongoose.createConnection(config.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true})
@@ -61,8 +64,8 @@ uploadRouter.get('/images/:filename', async (req, res) => {
 
 uploadRouter.post('/', async (req, res) => {
 
-  const decodedToken = jwt.verify(request.token, process.env.SECRET)  
-  if (!request.token || !decodedToken.id) {    
+  const decodedToken = jwt.verify(req.token, process.env.SECRET)  
+  if (!req.token || !decodedToken.id) {    
     return response.status(401).json({ error: 'token missing or invalid' })  
   }
 
@@ -80,19 +83,28 @@ uploadRouter.post('/', async (req, res) => {
   }
 })
 
-uploadRouter.delete('/images/:filename', (req, res) => {
+uploadRouter.delete('/images/:filename', async (req, res) => {
 
-    const decodedToken = jwt.verify(request.token, process.env.SECRET)  
-    if (!request.token || !decodedToken.id) {    
+  console.log(req.token)
+
+    const decodedToken = jwt.verify(req.token, process.env.SECRET)  
+    if (!req.token || !decodedToken.id) {    
       return response.status(401).json({ error: 'token missing or invalid' })  
     }
 
-    gfs.remove({ filename: req.params.filename, root: 'photos' }, (err, gridStore) => {
-      if(err){
-        return res.status(404).json({ error: err })
-      }
-      res.redirect('/')
-    })
+    try {
+      gfs.remove({ filename: req.params.filename, root: 'photos' }, (err, gridStore) => {
+        if(err){
+          return res.status(404).json({ error: err })
+        }
+        res.redirect('/')
+      })
+      await Painting.findOneAndDelete({ img: req.params.filename })
+    }
+    catch(err){
+      console.error(err)
+      res.status(500).error({ error: err })
+    }
 })
 
 module.exports = uploadRouter
