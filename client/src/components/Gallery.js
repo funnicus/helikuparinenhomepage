@@ -3,7 +3,6 @@ import Paintings from './Paintings'
 import paintingsService from '../services/paintings'
 import { Helmet } from 'react-helmet'
 import './Gallery.css'
-import { Collection } from 'mongoose'
 
 const Gallery = ({ lang }) => {
     const [dbCollections, setDbCollections] = useState([])

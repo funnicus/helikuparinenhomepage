@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import loginService from '../services/loginService'
-import paintingsService from '../services/paintings'
-import paintingService from '../services/painting'
-import uploadService from '../services/upload'
-import Message from './Message'
-import Login from './Login'
+import loginService from '../../services/loginService'
+import paintingsService from '../../services/paintings'
+import paintingService from '../../services/painting'
+import uploadService from '../../services/upload'
+
+import Message from '../Message'
+import Login from '../Login'
 import ModifyingPage from './ModifyingPage'
+import DeletePaintings from './DeletePaintings'
 import './AdminPage.css'
-import './Form.css'
+import '../Form.css'
 
 /**
- * Sori kun tämä koodi on nii hirveetä spagettia tuleva minä tai jokin muu :D
+ * Sori kun tämä koodi on nii hirveetä spagettia tuleva minä tai joku muu :D
  */
 
 const AdminPage = () => {
@@ -64,7 +66,6 @@ const AdminPage = () => {
         const fetchCollections = async () => {
           const receivedCollections = await paintingsService.getAll()
           setDbCollections(receivedCollections)
-          console.log(receivedCollections)
         }
         fetchCollections()
       }, [])
@@ -120,11 +121,9 @@ const AdminPage = () => {
       //Funktio lisää tilassa olevan kuvan tietokantaan
       //ja sitä kutsutaan addPainting() -funktiossa
       const addImage = async () => {
-        console.log(files)
         const formData = new FormData()
         formData.append('file', files)
         const res = await uploadService.create(formData)
-        console.log(res)
         return res
       }
 
@@ -201,6 +200,21 @@ const AdminPage = () => {
         setCollectionEn('')
         setFiles('')
       }
+
+      //taulujen poistamista varten
+      const deletePainting = async (filename) => {
+        const choice = window.confirm("Haluatko varmasti poistaa taulun?")
+        if(!choice) return
+        try {
+          await uploadService.remove(filename)
+          const updatedCollectionsList = await paintingsService.getAll()
+          console.log(updatedCollectionsList)
+          setDbCollections(updatedCollectionsList)
+        } catch (error) {
+          console.error(error)
+          createMessageTimeout({ backgroundColor: 'red', display: 'block' }, 'Jokin meni pieleen, avaa konsoli.', '...')
+        }
+      }
       
     //luodaan selectori käyttöliittymä, josta voidaan valita jo olemassa olevia kokoelmia
     const collectionsSelector = dbCollections.map((c, i) => <option key={c.id} value={c.name} onClick={handleOptionClick}>{c.name}</option>)
@@ -217,9 +231,9 @@ const AdminPage = () => {
               handleLogin={handleLogin} 
               />
             </div> : 
-            <div>
+            <div id="secret-place">
               <h1>Tervetuloa ylläpitohommiin!</h1>
-              <p>If you are some hacker, pls don't destroy anything ;(</p>
+              <marquee>If you are some hacker, pls don't destroy anything ;(</marquee>
               <button onClick={handleLogout}>Kirjaudu ulos...</button>
               <Message message={notification} style={notificationStyle} />
               <ModifyingPage 
@@ -243,6 +257,8 @@ const AdminPage = () => {
               addCollection={addCollection}
               collectionsSelector={collectionsSelector}
               />
+              <h2>Poista tauluja</h2>
+              <DeletePaintings dbCollections={dbCollections} deletePainting={deletePainting} />
             </div>}
         </div>
     )

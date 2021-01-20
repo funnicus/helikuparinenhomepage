@@ -8,7 +8,7 @@ import HeliKuparinen from './components/HeliKuparinen'
 import Contact from './components/Contact'
 import Gallery from './components/Gallery'
 import Navbar from './components/Navbar'
-import AdminPage from './components/AdminPage'
+import AdminPage from './components/admin-page/AdminPage'
 import './App.css'
 import useWindowDimensions from './hooks/useWindowDimensions'
 

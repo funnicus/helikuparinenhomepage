@@ -63,7 +63,7 @@ const ModifyingPage = ({ collection, collectionEn, handleCollectionChange, handl
                   <input 
                     type="file"
                     id='file'
-                    name="File" 
+                    name="File"
                     onChange={e => handleFileChange(e)}
                   />
                   <button id='submit-button' onClick={addCollection}>lataa...</button>
