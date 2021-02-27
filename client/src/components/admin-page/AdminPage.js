@@ -40,7 +40,6 @@ const AdminPage = () => {
     const handleNameChangeEn = e => setNameEn(e.target.value)
 
     const handleFileChange = e => {
-      console.log(files)
       return setFiles(e.target.files[0])
     }
 

@@ -58,8 +58,8 @@ const cvFi = () => {
           <h4>Opetustehtävät</h4>
           <div className='CurriculumRow'><div className='Year'><strong>1996</strong></div><div className='Desc'>Yleisradion kuvataidekerhon opettaja</div></div>
           <div className='CurriculumRow'><div className='Year'><strong>2008-11</strong></div><div className='Desc'>MLL:n kuvataidekerhon opettaja</div></div>
-          <div className='CurriculumRow'><div className='Year'><strong>2008-</strong></div><div className='Desc'>Pohjois-Helsingin kuvataidekoulun sijaisopettaja</div></div>
-          <div className='CurriculumRow'><div className='Year'><strong>2010-15</strong></div><div className='Desc'>Helsingin Taiteilijaseuran kuvataidekoulun opettaja</div></div>
+          <div className='CurriculumRow'><div className='Year'><strong>2008-</strong></div><div className='Desc'>Helsingin Taiteilijaseuran kuvataidekoulun opettaja</div></div>
+          <div className='CurriculumRow'><div className='Year'><strong>2010-15</strong></div><div className='Desc'>Pohjois-Helsingin kuvataidekoulun sijaisopettaja</div></div>
         </div>
         <div className='CurriculumSection'>
           <h4>Luottamustehtävät</h4>
@@ -92,7 +92,7 @@ const cvEn = () => {
           <div className='CurriculumRow'><div className='Year'><strong>1992</strong></div><div className='Desc'>Academy of Fine Arts, Helsinki</div></div>
           <div className='CurriculumRow'><div className='Year'><strong>1993</strong></div><div className='Desc'>Thesis exhibition, Academy of Fine Arts, Helsinki</div></div>
           <div className='CurriculumRow'><div className='Year'><strong>1995</strong></div><div className='Desc'>Jyväskylä winter</div></div>
-          <div className='CurriculumRow'><div className='Year'><strong>1996</strong></div><div className='Desc'>Seven Gients, Galleria Pintura, Helsinki</div></div>
+          <div className='CurriculumRow'><div className='Year'><strong>1996</strong></div><div className='Desc'>Seven Giants, Galleria Pintura, Helsinki</div></div>
           <div className='CurriculumRow'><div className='Year'><strong>1999</strong></div><div className='Desc'>
             <p>Grand Tour 99, Galleria Becker, Jyväskylä </p>
             <p>(Invitatinal exhibition of the Jyväskylä Artists' Association)</p>
