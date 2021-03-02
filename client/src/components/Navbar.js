@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import {
   Link
 } from "react-router-dom"
@@ -15,7 +15,7 @@ const Navbar = ({ id, lang, setLang, setFadein }) => {
 
   return (
         <div>
-          <button id='dropdown-btn' onClick={toggleMenu}><FontAwesomeIcon icon={faBars} /></button>
+          <button id='dropdown-btn' onClick={toggleMenu}><FontAwesomeIcon icon={!style ? faTimes : faBars} /></button>
           <nav id={id} className="Navbar" style={style && width < 770 ? { display: 'none' } : { display: 'flex' }}>
             <ul id='Left'>
                 <li><Link to="/" onClick={() => setFadein('none')}>Heli Kuparinen</Link></li>
