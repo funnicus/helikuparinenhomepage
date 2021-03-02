@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.4b444346.chunk.css",
-    "main.js": "/static/js/main.8ef949f1.chunk.js",
-    "main.js.map": "/static/js/main.8ef949f1.chunk.js.map",
+    "main.js": "/static/js/main.94380fa7.chunk.js",
+    "main.js.map": "/static/js/main.94380fa7.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.09b85ec0.js",
     "runtime-main.js.map": "/static/js/runtime-main.09b85ec0.js.map",
-    "static/js/2.4386cf46.chunk.js": "/static/js/2.4386cf46.chunk.js",
-    "static/js/2.4386cf46.chunk.js.map": "/static/js/2.4386cf46.chunk.js.map",
+    "static/js/2.727f1344.chunk.js": "/static/js/2.727f1344.chunk.js",
+    "static/js/2.727f1344.chunk.js.map": "/static/js/2.727f1344.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.644e97067db7fcdd1301cdfae823a802.js": "/precache-manifest.644e97067db7fcdd1301cdfae823a802.js",
+    "precache-manifest.518990966d4a9afe1ccb901a61ab5bbe.js": "/precache-manifest.518990966d4a9afe1ccb901a61ab5bbe.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.4b444346.chunk.css.map": "/static/css/main.4b444346.chunk.css.map",
-    "static/js/2.4386cf46.chunk.js.LICENSE.txt": "/static/js/2.4386cf46.chunk.js.LICENSE.txt",
+    "static/js/2.727f1344.chunk.js.LICENSE.txt": "/static/js/2.727f1344.chunk.js.LICENSE.txt",
     "static/media/aamu.jpg": "/static/media/aamu.f1c729c8.jpg",
     "static/media/arktinen-ankka.jpg": "/static/media/arktinen-ankka.db8d0695.jpg",
     "static/media/iloisesti-sekaisin.jpg": "/static/media/iloisesti-sekaisin.b4495094.jpg",
@@ -25,8 +25,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.09b85ec0.js",
-    "static/js/2.4386cf46.chunk.js",
+    "static/js/2.727f1344.chunk.js",
     "static/css/main.4b444346.chunk.css",
-    "static/js/main.8ef949f1.chunk.js"
+    "static/js/main.94380fa7.chunk.js"
   ]
 }
