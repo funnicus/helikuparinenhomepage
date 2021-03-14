@@ -7,7 +7,7 @@ Serveri käynnistetään npm:än avulla juuresta komennolla npm run start. React
 kansiossa "client". Muista suorittaa **npm i** sekä juuressa, että "client" hakemistossa, jotta kaikki riippuvuudet asentuvat!
 
 ### Työkirjanpito
-Juuressa excel taulukkona.
+Juuressa excel taulukkona tidostossa "Fullstack open työkirjanpito.xlxs".
 
 ### Muuta tärkeää
 
