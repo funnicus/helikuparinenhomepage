@@ -12,7 +12,7 @@
 }
 
 .HeaderText {
-    animation: fadeInHeader 3s ease-in both;
+    animation: fadeInHeader 2s ease-in both;
 }
 
 @media only screen and (max-width: 770px) {
@@ -26,10 +26,6 @@
 		opacity: 0;
 		transform: translate3d(0, -20%, 0);
     }
-    50% {
-		opacity: 0.5;
-		transform: translate3d(0, -10%, 0);
-	}
 	100% {
 		opacity: 1;
 		transform: translate3d(0, 0, 0);
