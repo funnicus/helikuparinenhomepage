@@ -1,6 +1,8 @@
 # Taitelija Heli Kuparisen kotisivut
 ### Toteutettu Reactilla ja NodeJS:llä
 
+### HUOM! Nämä sivut ovat vanhat äitini sivut. Kiinnostava täällä repossa on lähinnä bäkkäri. Uudet sivut löydät [täältä](https://github.com/funnicus/helikuparinen.fi)!
+
 ## Käyttöohjeet
 Sovellus vaatiin Node.js:n! Sen voi asentaa täältä: https://nodejs.org/en/
 Serveri käynnistetään npm:än avulla juuresta komennolla npm run start. React käyttöliittymä käynnistetään komennolla npm start
